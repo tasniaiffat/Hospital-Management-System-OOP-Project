@@ -113,7 +113,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.hospital_management_system/com.example.hospital_management_system.HelloApplication
+                                com.example.hospital_management_system/Models.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

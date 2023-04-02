@@ -1,6 +1,7 @@
-module com.example.hospital_management_system {
+module Models {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
@@ -9,6 +10,10 @@ module com.example.hospital_management_system {
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
 
-    opens com.example.hospital_management_system to javafx.fxml;
-    exports com.example.hospital_management_system;
+    opens Models to javafx.fxml;
+    exports Models;
+    exports Controllers;
+    opens Controllers to javafx.fxml;
+    exports Models.ClassHierarchy;
+    opens Models.ClassHierarchy to javafx.fxml;
 }
