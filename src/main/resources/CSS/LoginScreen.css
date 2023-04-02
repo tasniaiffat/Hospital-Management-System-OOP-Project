@@ -1,0 +1,49 @@
+.LoginLeft{
+    -fx-background-color: linear-gradient(to top left,#5b2fca,#ffffff);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.LoginRight{
+    -fx-background-color: #E7E0F7;
+}
+
+.LoginButton{
+    -fx-min-width: 240px;
+    -fx-max-width: 400px;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14pt;
+    -fx-background-color: #5b2fca;
+    -fx-text-fill: #ffffff;
+    -fx-border: 0;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+}
+
+.SignUpButton{
+    -fx-background-color: transparent;
+    -fx-text-fill: blue;
+    -fx-underline: true;
+    -fx-font-size: 12pt;
+    -fx-cursor: hand;
+}
+
+.label{
+    -fx-font-family: 'Arial';
+    -fx-font-size: 12pt;
+    -fx-padding: 10,10,10,10;
+}
+
+
+.field{
+    -fx-min-width: 250px;
+    -fx-max-width: 400px;
+
+}
+
+.field:selected + .LoginLeft {
+    -fx-translate-x: -100%; /* move pane off screen */
+}
+
+
+
+
