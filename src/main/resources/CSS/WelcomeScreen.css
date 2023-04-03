@@ -1,26 +1,31 @@
 .Welcome_LeftAnchor{
-    -fx-background-color: linear-gradient(to bottom left,#5b2fca,#ffffff);
+    -fx-background-color: linear-gradient(to top left,#5b2fca,#3CDEC3);
 }
 .Welcome_RightAnchor{
-    -fx-background-color: #E7E0F7;
+    -fx-background-color: #e2f8fb;
 }
 
 .WelcomeText{
-    -fx-font-size: 33pt;
-    -fx-font-family: "Tahoma";
-    -fx-font-weight: bold;
+    -fx-font-size: 35pt;
+    -fx-border-width: 10000;
+    -fx-text-fill: #0b4a52;
+    -fx-font-family: 'Arial';
+    -fx-padding: 10,10,10,10;
+    -fx-alignment: center;
+    -fx-font-weight: bolder;
 }
 
-.WelcomeButton,.WelcomeLoginButton{
-    -fx-font-size: 26px;
-    -fx-font-family:'Arial';
-    -fx-font-weight:400;
-    -fx-fill:#ffffff;
-    -fx-background-radius:25px;
-    -fx-border:0;
-    -fx-background-color: #D7171E;
-    -fx-text-fill:#ffffff;
-    -fx-cursor:hand;
+.WelcomeButton{
+    -fx-min-width: 240px;
+    -fx-max-width: 400px;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 20pt;
+    -fx-font-weight: bold;
+    -fx-background-color: #5b2fca;
+    -fx-text-fill: #ffffff;
+    -fx-border: 0;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
 }
 
 .WelcomeButton:hover{
