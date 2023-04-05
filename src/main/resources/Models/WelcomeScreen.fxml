@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="welcome_borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" styleClass="welcome_leftAnchor" stylesheets="@../CSS/WelcomeScreen.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="680.0" maxWidth="1000.0" minHeight="680.0" minWidth="1000.0" prefHeight="680.0" prefWidth="1000.0" styleClass="Welcome_LeftAnchor" stylesheets="@../CSS/WelcomeScreen.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.WelcomeScreenController">
    <left>
-      <AnchorPane fx:id="welcome_left" prefHeight="680.0" prefWidth="379.0" styleClass="Welcome_LeftAnchor" stylesheets="@../CSS/WelcomeScreen.css" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="680.0" prefWidth="379.0" styleClass="Welcome_LeftAnchor" stylesheets="@../CSS/WelcomeScreen.css" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="336.0" fitWidth="241.0" layoutX="47.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -22,11 +22,11 @@
          </children></AnchorPane>
    </left>
    <center>
-      <AnchorPane fx:id="welome_right" prefHeight="550.0" prefWidth="691.0" styleClass="Welcome_RightAnchor" stylesheets="@../CSS/WelcomeScreen.css" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="550.0" prefWidth="691.0" styleClass="Welcome_RightAnchor" stylesheets="@../CSS/WelcomeScreen.css" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="561.0" fitWidth="623.0" layoutX="68.0" layoutY="109.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Assets/WelcomLogo.png" />
+                  <Image url="@../Assets/WelcomeLogo.png" />
                </image>
             </ImageView>
             <Label layoutX="71.0" layoutY="200.0" lineSpacing="10.0" prefWidth="488.0" styleClass="WelcomeText" stylesheets="@../CSS/WelcomeScreen.css" text="Welcome to Hospital Management System" textAlignment="CENTER" wrapText="true">
@@ -37,7 +37,7 @@
                   <Font name="Century Gothic Bold" size="38.0" />
                </font>
             </Label>
-            <Button layoutX="195.0" layoutY="402.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="233.0" styleClass="WelcomeButton" stylesheets="@../CSS/WelcomeScreen.css" text="Get Started" textAlignment="CENTER" textFill="#7d2ae8">
+            <Button fx:id="getStartedButton" layoutX="195.0" layoutY="402.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="233.0" styleClass="WelcomeButton" stylesheets="@../CSS/WelcomeScreen.css" text="Get Started" textAlignment="CENTER" textFill="#7d2ae8">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
@@ -47,6 +47,8 @@
             </Button>
             <Region layoutY="15.0" prefHeight="648.0" prefWidth="80.0" />
             <Region layoutX="555.0" layoutY="16.0" prefHeight="648.0" prefWidth="60.0" />
+            <Label layoutX="217.0" layoutY="556.0" styleClass="LoginLabel" stylesheets="@../CSS/SignUpScreen.css" text="Already an user?" />
+            <Button fx:id="loginScreenButton" layoutX="346.0" layoutY="559.0" mnemonicParsing="false" styleClass="LoginButton" stylesheets="@../CSS/SignUpScreen.css" text="Log in" />
          </children>
       </AnchorPane>
    </center>

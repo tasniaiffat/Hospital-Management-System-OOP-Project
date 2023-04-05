@@ -1,27 +1,34 @@
 package Controllers;
 
+
+import Models.ManagementUtils;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
-public class WelcomeScreenController {
-    @FXML
-    private Label welcomeText;
-    @FXML // fx:id="welcome_borderpane"
-    private BorderPane welcome_borderpane; // Value injected by FXMLLoader
+import java.net.URL;
+import java.util.ResourceBundle;
 
-    @FXML // fx:id="welcome_left"
-    private AnchorPane welcome_left; // Value injected by FXMLLoader
-
-    @FXML // fx:id="welome_right"
-    private AnchorPane welome_right; // Value injected by FXMLLoader
-
-
-
+public class WelcomeScreenController implements Initializable {
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private Button getStartedButton;
+
+    @FXML
+    private Button loginScreenButton;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        getStartedButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"SignUpScreen.fxml","Login");
+        });
+
+        loginScreenButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"LoginScreen.fxml","Login");
+        });
     }
+
+
 }
