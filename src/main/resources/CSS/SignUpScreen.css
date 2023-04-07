@@ -28,6 +28,21 @@
     -fx-background-radius: 25px;
     -fx-cursor: hand;
 }
+.SignUpButton:hover {
+    -fx-background-color: transparent;
+    -fx-background-radius: 25px;
+    -fx-text-fill: #008CBA;
+    -fx-border-width: 2px;
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 25px;
+    -fx-min-width: 240px;
+    -fx-max-width: 400px;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14pt;
+    -fx-font-weight: bolder;
+    -fx-border: 0;
+    -fx-cursor: hand;
+}
 
 .LoginLabel{
     -fx-font-family: 'Arial';

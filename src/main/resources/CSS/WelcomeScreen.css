@@ -15,19 +15,44 @@
     -fx-font-weight: bolder;
 }
 
-.WelcomeButton{
+/*.WelcomeButton{*/
+/*    -fx-min-width: 240px;*/
+/*    -fx-max-width: 400px;*/
+/*    -fx-font-family: 'Arial';*/
+/*    -fx-font-size: 20pt;*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-color: #5b2fca;*/
+/*    -fx-text-fill: #ffffff;*/
+/*    -fx-border: 0;*/
+/*    -fx-background-radius: 25px;*/
+/*    -fx-cursor: hand;*/
+/*}*/
+
+/*.WelcomeButton:hover{*/
+/*    -fx-font-size: 28px;*/
+/*}*/
+.WelcomeButton {
+    -fx-background-color: #008CBA;
     -fx-min-width: 240px;
     -fx-max-width: 400px;
     -fx-font-family: 'Arial';
-    -fx-font-size: 20pt;
+    -fx-text-fill: #fff;
     -fx-font-weight: bold;
-    -fx-background-color: #5b2fca;
-    -fx-text-fill: #ffffff;
-    -fx-border: 0;
+    -fx-font-size: 28px;
+    -fx-border-radius: 5px;
     -fx-background-radius: 25px;
     -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+    -fx-padding: 0;
 }
 
-.WelcomeButton:hover{
-    -fx-font-size: 28px;
+.WelcomeButton:hover {
+    -fx-background-color: transparent;
+    -fx-background-radius: 25px;
+    -fx-text-fill: #008CBA;
+    -fx-border-width: 2px;
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 25px;
 }
+
+
