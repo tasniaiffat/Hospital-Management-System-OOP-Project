@@ -38,7 +38,7 @@
             </TextField>
             <PasswordField fx:id="signUpPass" focusTraversable="false" layoutX="180.0" layoutY="338.0" prefHeight="38.0" prefWidth="297.0" promptText="Password" />
             <PasswordField fx:id="signUpConfirmPass" focusTraversable="false" layoutX="180.0" layoutY="402.0" prefHeight="38.0" prefWidth="297.0" promptText="Confirm Password" />
-            <Button fx:id="signUpButton" layoutX="175.0" layoutY="481.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="SignUpButton" stylesheets="@../CSS/SignUpScreen.css" text="Sign Up" />
+            <Button fx:id="signUpButton" layoutX="175.0" layoutY="507.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="SignUpButton" stylesheets="@../CSS/SignUpScreen.css" text="Sign Up" />
             <Label layoutX="100.0" layoutY="120.0" prefHeight="131.0" prefWidth="456.0" styleClass="SignUpLabel" stylesheets="@../CSS/SignUpScreen.css" text="Create Account">
                <font>
                   <Font name="Arial Black" size="12.0" />
@@ -50,8 +50,13 @@
                </image>
             </ImageView>
             <Line endX="201.0" layoutX="287.0" layoutY="320.0" opacity="0.19" startX="-128.0" stroke="#0b4a52" />
-            <Label layoutX="218.0" layoutY="572.0" styleClass="LoginLabel" stylesheets="@../CSS/SignUpScreen.css" text="Already an user?" />
-            <Button fx:id="logInScreenButton" layoutX="347.0" layoutY="575.0" mnemonicParsing="false" styleClass="LoginButton" stylesheets="@../CSS/SignUpScreen.css" text="Log in" />
+            <Label layoutX="218.0" layoutY="563.0" styleClass="LoginLabel" stylesheets="@../CSS/SignUpScreen.css" text="Already an user?" />
+            <Button fx:id="logInScreenButton" layoutX="347.0" layoutY="566.0" mnemonicParsing="false" styleClass="LoginButton" stylesheets="@../CSS/SignUpScreen.css" text="Log in" />
+            <Label fx:id="errorMessage" alignment="CENTER" layoutX="175.0" layoutY="457.0" prefHeight="38.0" prefWidth="297.0" text=" " textFill="#e40707">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

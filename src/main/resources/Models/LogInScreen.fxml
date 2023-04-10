@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LogInController">
    <left>
@@ -24,17 +25,22 @@
    <center>
       <AnchorPane prefHeight="680.0" prefWidth="668.0" styleClass="LoginRight" stylesheets="@../CSS/LoginScreen.css" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="loginEmail" focusTraversable="false" layoutX="215.0" layoutY="288.0" prefHeight="38.0" prefWidth="297.0" promptText="Email Address" styleClass="field" stylesheets="@../CSS/LoginScreen.css" />
-            <Button fx:id="loginButton" layoutX="215.0" layoutY="438.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="LoginButton" stylesheets="@../CSS/LoginScreen.css" text="Log in" />
-            <Label layoutX="235.0" layoutY="524.0" styleClass="SignupLabel" stylesheets="@../CSS/LoginScreen.css" text="Not already a user?" />
-            <Button fx:id="signUpScreenButton" layoutX="384.0" layoutY="527.0" mnemonicParsing="false" styleClass="SignUpButton" stylesheets="@../CSS/LoginScreen.css" text="Sign Up" />
-            <PasswordField fx:id="loginPass" focusTraversable="false" layoutX="215.0" layoutY="357.0" prefHeight="38.0" prefWidth="297.0" promptText="Password" styleClass="field" stylesheets="@../CSS/LoginScreen.css" />
+            <TextField fx:id="loginEmail" layoutX="215.0" layoutY="288.0" prefHeight="38.0" prefWidth="297.0" promptText="Email Address" styleClass="field" stylesheets="@../CSS/LoginScreen.css" />
+            <Button fx:id="loginButton" layoutX="215.0" layoutY="468.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="LoginButton" stylesheets="@../CSS/LoginScreen.css" text="Log in" />
+            <Label layoutX="235.0" layoutY="554.0" styleClass="SignupLabel" stylesheets="@../CSS/LoginScreen.css" text="Not already a user?" />
+            <Button fx:id="signUpScreenButton" layoutX="384.0" layoutY="557.0" mnemonicParsing="false" styleClass="SignUpButton" stylesheets="@../CSS/LoginScreen.css" text="Sign Up" />
+            <PasswordField fx:id="loginPass" layoutX="215.0" layoutY="357.0" prefHeight="38.0" prefWidth="297.0" promptText="Password" styleClass="field" stylesheets="@../CSS/LoginScreen.css" />
             <Label layoutX="181.0" layoutY="190.0" styleClass="LoginLabel" stylesheets="@../CSS/LoginScreen.css" text="Welcome Back!" />
             <ImageView fitHeight="58.0" fitWidth="59.0" layoutX="315.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Assets/loginIcon.png" />
                </image>
             </ImageView>
+            <Label fx:id="errorMessage" alignment="CENTER" layoutX="215.0" layoutY="413.0" prefHeight="38.0" prefWidth="297.0" text=" " textAlignment="CENTER" textFill="#f20000">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>
