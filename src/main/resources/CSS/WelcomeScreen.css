@@ -14,6 +14,15 @@
     -fx-alignment: center;
     -fx-font-weight: bolder;
 }
+.OrText{
+    -fx-font-size: 20pt;
+    -fx-border-width: 10000;
+    -fx-text-fill: #0b4a52;
+    -fx-font-family: 'Arial';
+    -fx-padding: 10,10,10,10;
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+}
 
 /*.WelcomeButton{*/
 /*    -fx-min-width: 240px;*/

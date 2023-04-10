@@ -29,7 +29,7 @@
                   <Image url="@../Assets/WelcomeLogo.png" />
                </image>
             </ImageView>
-            <Label layoutX="71.0" layoutY="200.0" lineSpacing="10.0" prefWidth="488.0" styleClass="WelcomeText" stylesheets="@../CSS/WelcomeScreen.css" text="Welcome to Hospital Management System" textAlignment="CENTER" wrapText="true">
+            <Label layoutX="86.0" layoutY="162.0" lineSpacing="10.0" prefWidth="488.0" styleClass="WelcomeText" stylesheets="@../CSS/WelcomeScreen.css" text="Welcome to Hospital Management System" textAlignment="CENTER" wrapText="true">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -37,7 +37,7 @@
                   <Font name="Century Gothic Bold" size="38.0" />
                </font>
             </Label>
-            <Button fx:id="getStartedButton" layoutX="195.0" layoutY="402.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="233.0" styleClass="WelcomeButton" stylesheets="@../CSS/WelcomeScreen.css" text="Get Started" textAlignment="CENTER" textFill="#7d2ae8">
+            <Button fx:id="getStartedButton" layoutX="210.0" layoutY="513.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="233.0" styleClass="WelcomeButton" stylesheets="@../CSS/WelcomeScreen.css" text="Get Started" textAlignment="CENTER" textFill="#7d2ae8">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
@@ -47,8 +47,8 @@
             </Button>
             <Region layoutY="15.0" prefHeight="648.0" prefWidth="80.0" />
             <Region layoutX="555.0" layoutY="16.0" prefHeight="648.0" prefWidth="60.0" />
-            <Label layoutX="217.0" layoutY="556.0" styleClass="LoginLabel" stylesheets="@../CSS/SignUpScreen.css" text="Already an user?" />
-            <Button fx:id="loginScreenButton" layoutX="346.0" layoutY="559.0" mnemonicParsing="false" styleClass="LoginButton" stylesheets="@../CSS/SignUpScreen.css" text="Log in" />
+            <Button fx:id="loginScreenButton" layoutX="210.0" layoutY="340.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="233.0" styleClass="WelcomeButton" stylesheets="@../CSS/WelcomeScreen.css" text="Log in" />
+            <Label layoutX="288.0" layoutY="437.0" prefHeight="57.0" prefWidth="84.0" styleClass="OrText" stylesheets="@../CSS/WelcomeScreen.css" text="Or" />
          </children>
       </AnchorPane>
    </center>
