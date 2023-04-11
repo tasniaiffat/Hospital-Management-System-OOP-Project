@@ -42,13 +42,13 @@
 /*}*/
 .ReceptionButton {
     -fx-background-color: #008CBA;
-    -fx-min-width: 200px;
+    -fx-min-width: 320px;
     -fx-max-width: 340px;
     -fx-font-family: 'Arial';
     -fx-text-fill: #fff;
     -fx-font-weight: bold;
-    -fx-font-size: 18px;
-    -fx-border-radius: 3px;
+    -fx-font-size: 24px;
+    -fx-border-radius: 2px;
     -fx-background-radius: 25px;
     -fx-cursor: hand;
     -fx-transition: all 0.3s ease;

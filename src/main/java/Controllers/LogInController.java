@@ -46,9 +46,10 @@ public class LogInController implements Initializable{
         loginButton.setOnAction( e -> {
             successfulLogin = receptionist.logIn(loginEmail,loginPass,errorMessage);
 
-//            if(successfulLogin){
-//                ManagementUtils.changeScence(e,);
-//            }
+            if(successfulLogin){
+                ManagementUtils.changeScence(e,"reception.fxml","Reception");
+            }
+            //ManagementUtils.changeScence(e,"reception.fxml","Reception");
         });
 
     }
