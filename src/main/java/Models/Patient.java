@@ -9,19 +9,27 @@ import javafx.scene.paint.Color;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Patient extends Person implements PatientInterface {
+
     private List<String> medicalHistory;
     private List<String> currentTreatment;
 
-    public Patient(String ID, String name, String contactNo, String emailAddress, String address, Date date, Gender gender,
+
+    public Patient(String name, String contactNo, String emailAddress, String address, LocalDate date, Gender gender,
                    ArrayList<String> medicalHistory, ArrayList<String> currentTreatment) {
-        super(ID, name, contactNo,emailAddress, address, date, gender);
+        super(name, contactNo,emailAddress, address, date, gender);
+
+        this.ID = generateID();
         this.medicalHistory = medicalHistory;
         this.currentTreatment = currentTreatment;
+
     }
 
     public List<String> getMedicalHistory() {
@@ -38,6 +46,30 @@ public class Patient extends Person implements PatientInterface {
 
     public void setCurrentTreatment(List<String> currentTreatment) {
         this.currentTreatment = currentTreatment;
+    }
+
+    public String generateID(){
+        DBUtils connectNow = new DBUtils();
+        Connection connectDB = connectNow.getConnection();
+        String connectQuery = "SELECT COUNT(*) FROM `hospital`.`patientinfo`;\n";
+        int count=0;
+
+        try {
+            PreparedStatement statement = connectDB.prepareStatement(connectQuery);
+
+            ResultSet rs = statement.executeQuery();
+
+            // Get the result
+            if (rs.next()) {
+                count = rs.getInt(1);
+                System.out.println("Number of entries: " + count);
+            }
+            count++;
+        } catch (Exception s){
+            s.printStackTrace();
+        }
+        return "PAT"+ new String(new char[6-(int)Math.log10(count)]).replace('\0', '0')+count;
+
     }
 
     public boolean addPatient(Label errorMessage){

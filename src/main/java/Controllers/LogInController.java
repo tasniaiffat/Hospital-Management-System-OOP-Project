@@ -40,9 +40,8 @@ public class LogInController implements Initializable{
             successfulLogin = receptionist.logIn(loginEmail,loginPass,errorMessage);
 
             if(successfulLogin){
-                ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
+                ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Select Patient Type");
             }
-            //ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
         });
 
     }

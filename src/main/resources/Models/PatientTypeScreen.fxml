@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" stylesheets="@../CSS/PatientTypeScreen.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PatientTypeController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="PatientTypeCenter" stylesheets="@../CSS/PatientTypeScreen.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="newPatientButton" layoutX="248.0" layoutY="428.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="273.0" styleClass="PatientTypeButton" stylesheets="@../CSS/PatientTypeScreen.css" text="New Patient" />
+            <Button fx:id="existingPatientButton" layoutX="248.0" layoutY="518.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="273.0" styleClass="PatientTypeButton" stylesheets="@../CSS/PatientTypeScreen.css" text="Existing Patient" />
+            <ImageView fx:id="patientTypeImage" fitHeight="184.0" fitWidth="174.0" layoutX="297.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true" styleClass="PatientTypeIcon">
+               <image>
+                  <Image url="@../Assets/Patient.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="patientTypeLabel" layoutX="160.0" layoutY="319.0" styleClass="PatientTypeLabel" stylesheets="@../CSS/PatientTypeScreen.css" text="Select Patient Type" />
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="680.0" prefWidth="281.0" styleClass="PatientTypeRight" stylesheets="@../CSS/PatientTypeScreen.css" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

@@ -48,7 +48,7 @@ public class Receptionist {
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
 
-        String connectQuery = "SELECT `email address`, `password` FROM `hospital`.`logininfo`;\n";
+        String connectQuery = "SELECT `email address`, `password` FROM `hospital`.logininfo;\n";
 
 
         try {
@@ -89,11 +89,12 @@ public class Receptionist {
             return false;
         }
 
-        String connectQuery = "INSERT INTO `hospital`.`logininfo`(`email address`,`password`) values (?,?);\n";
+//        String connectQuery = "INSERT INTO `hospital`.logininfo`(`email address`,`password`) values (?,?);\n";
+        String connectQuery = "INSERT INTO  `hospital`.logininfo (`email address`, password) values (?,?);\n";
 
         try {
             PreparedStatement statement = connectDB.prepareStatement(connectQuery);
-            statement.setString(1,emailAddress);
+            statement.setString(1, emailAddress);
             statement.setString(2,password);
             int status = statement.executeUpdate();
 

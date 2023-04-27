@@ -1,5 +1,6 @@
 package Models.ClassHierarchy;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public abstract class Person {
@@ -8,11 +9,10 @@ public abstract class Person {
     protected String contactNo;
     protected String emailAddress;
     protected String address;
-    protected Date date;
+    protected LocalDate date;
     protected Gender gender;
 
-    public Person(String ID, String name, String contactNo, String emailAddress, String address, Date date, Gender gender) {
-        this.ID = ID;
+    public Person(String name, String contactNo, String emailAddress, String address, LocalDate date, Gender gender) {
         this.name = name;
         this.contactNo = contactNo;
         this.emailAddress = emailAddress;
@@ -61,11 +61,11 @@ public abstract class Person {
         this.address = address;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
