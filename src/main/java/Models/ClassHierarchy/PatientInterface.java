@@ -1,0 +1,14 @@
+package Models.ClassHierarchy;
+
+import javafx.scene.control.Label;
+
+import java.util.List;
+
+public interface PatientInterface {
+    public List<String> getMedicalHistory();
+    public void setMedicalHistory(List<String> medicalHistory);
+    public List<String> getCurrentTreatment();
+    public void setCurrentTreatment(List<String> currentTreatment);
+    public boolean addPatient(Label errorMessage);
+    public boolean removePatient(String ID, Label errorMessage);
+}

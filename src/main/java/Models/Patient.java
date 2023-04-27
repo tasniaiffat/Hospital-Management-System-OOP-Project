@@ -1,5 +1,8 @@
-package Models.ClassHierarchy;
+package Models;
 
+import Models.ClassHierarchy.Gender;
+import Models.ClassHierarchy.PatientInterface;
+import Models.ClassHierarchy.Person;
 import Models.DBUtils;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
@@ -10,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Patient extends Person{
+public class Patient extends Person implements PatientInterface {
     private List<String> medicalHistory;
     private List<String> currentTreatment;
 

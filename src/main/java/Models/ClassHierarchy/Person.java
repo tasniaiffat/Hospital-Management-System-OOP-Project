@@ -2,14 +2,14 @@ package Models.ClassHierarchy;
 
 import java.util.Date;
 
-abstract class Person {
-    private String ID;
-    private String name;
-    private String contactNo;
-    private String emailAddress;
-    private String address;
-    private Date date;
-    private Gender gender;
+public abstract class Person {
+    protected String ID;
+    protected String name;
+    protected String contactNo;
+    protected String emailAddress;
+    protected String address;
+    protected Date date;
+    protected Gender gender;
 
     public Person(String ID, String name, String contactNo, String emailAddress, String address, Date date, Gender gender) {
         this.ID = ID;

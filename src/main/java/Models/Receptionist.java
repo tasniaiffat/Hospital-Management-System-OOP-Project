@@ -1,4 +1,4 @@
-package Models.ClassHierarchy;
+package Models;
 
 import Models.DBUtils;
 import javafx.scene.control.Label;
