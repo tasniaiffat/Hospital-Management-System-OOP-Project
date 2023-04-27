@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -13,7 +21,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SignUpController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SignUpController">
    <right>
       <AnchorPane prefHeight="680.0" prefWidth="383.0" styleClass="RightAnchor" stylesheets="@../CSS/SignUpScreen.css" BorderPane.alignment="CENTER">
          <children>
@@ -28,7 +36,7 @@
    <center>
       <AnchorPane prefHeight="680.0" prefWidth="631.0" styleClass="LeftAnchor" stylesheets="@../CSS/SignUpScreen.css" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="signUpEmail" focusTraversable="false" layoutX="180.0" layoutY="259.0" prefHeight="38.0" prefWidth="297.0" promptText="Email">
+            <TextField fx:id="signUpEmail" focusTraversable="false" layoutX="180.0" layoutY="259.0" prefHeight="38.0" prefWidth="297.0" promptText="Username">
                <opaqueInsets>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </opaqueInsets>

@@ -1,0 +1,60 @@
+.PatientTypeLeft{
+    -fx-background-color: linear-gradient(to top left,#5b2fca,#3CDEC3);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.PatientTypeRight{
+    -fx-background-color: #e2f8fb;
+}
+
+.PatientTypeButton{
+    -fx-min-width: 200px;
+    -fx-max-width: 250px;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14pt;
+    -fx-background-color: #5b2fca;
+    -fx-text-fill: #ffffff;
+    -fx-border: 0;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+}
+.PatientTypeButton:hover {
+    -fx-min-width: 240px;
+    -fx-max-width: 400px;
+    -fx-background-color: transparent;
+    -fx-text-fill: #008CBA;
+    -fx-border-width: 2px;
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 25px;
+    -fx-font-weight: bolder;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14pt;
+    -fx-border: 0;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+}
+
+.PatientTypeLabel{
+    -fx-font-family: 'Arial';
+    -fx-font-size: 12pt;
+    -fx-padding: 10,10,10,10;
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.PatientTypeLabel{
+    -fx-font-size: 35pt;
+    -fx-border-width: 10000;
+    -fx-text-fill: #0b4a52;
+    -fx-font-family: 'Arial';
+    -fx-padding: 10,10,10,10;
+    -fx-alignment: center;
+    -fx-font-weight: bolder;
+
+}
+
+.PatientTypeIcon{
+    -fx-border-color: #0b4a52;
+}
+
+
+

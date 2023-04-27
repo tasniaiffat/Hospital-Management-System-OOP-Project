@@ -9,7 +9,7 @@ public class DBUtils {
         String databaseName = "hospital";
         String databaseUser = "root";
         String databasePassword = "bhallagena123";
-        String url = "jdbc:mysql://localhost/"+databaseName;
+        String url = "jdbc:mysql://localhost:3306/"+databaseName;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
