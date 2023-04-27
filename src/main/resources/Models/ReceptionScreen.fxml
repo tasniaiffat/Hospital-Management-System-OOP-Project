@@ -9,7 +9,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <left>
-        <AnchorPane prefHeight="680.0" prefWidth="283.0" styleClass="Reception_LeftAnchor" stylesheets="@../CSS/reception.css" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="680.0" prefWidth="283.0" styleClass="Reception_LeftAnchor" stylesheets="@../CSS/ReceptionScreen.css" BorderPane.alignment="CENTER">
             <children>
                 <ImageView fitHeight="267.0" fitWidth="222.0" layoutX="31.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -20,18 +20,18 @@
         </AnchorPane>
     </left>
     <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="Reception_RightAnchor" stylesheets="@../CSS/reception.css" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="Reception_RightAnchor" stylesheets="@../CSS/ReceptionScreen.css" BorderPane.alignment="CENTER">
             <children>
                 <ImageView fitHeight="652.0" fitWidth="721.0" layoutX="37.0" layoutY="14.0" opacity="0.65" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../Assets/WelcomeLogo.png" />
                     </image>
                 </ImageView>
-                <Button layoutX="203.0" layoutY="226.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/reception.css" text="Make an Appointment" />
-                <Button layoutX="203.0" layoutY="277.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/reception.css" text="Patient Records" />
-                <Button layoutX="203.0" layoutY="325.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/reception.css" text="Pharmacy" />
-                <Button layoutX="203.0" layoutY="372.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/reception.css" text="Lab Test" />
-                <Button layoutX="203.0" layoutY="419.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/reception.css" text="Billing" />
+                <Button layoutX="203.0" layoutY="226.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Make an Appointment" />
+                <Button layoutX="203.0" layoutY="277.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Patient Records" />
+                <Button layoutX="203.0" layoutY="325.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Pharmacy" />
+                <Button layoutX="203.0" layoutY="372.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Lab Test" />
+                <Button layoutX="203.0" layoutY="419.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Billing" />
             </children>
         </AnchorPane>
     </center>
