@@ -1,9 +1,7 @@
 package Controllers;
 
-import Models.ClassHierarchy.Receptionist;
+import Models.Receptionist;
 import Models.ManagementUtils;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;

@@ -1,0 +1,39 @@
+.ChoosePatientLeft{
+    -fx-background-color: linear-gradient(to top left,#5b2fca,#3CDEC3);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.ChoosePatientCenter{
+    -fx-background-color: #e2f8fb;
+}
+
+.SelectButton{
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14pt;
+    -fx-background-color: #5b2fca;
+    -fx-text-fill: #ffffff;
+    -fx-border: 0;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+}
+
+.SelectButton:hover{
+    -fx-background-color: transparent;
+    -fx-text-fill: #008CBA;
+    -fx-border-width: 2px;
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 25px;
+    -fx-font-weight: bolder;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14pt;
+    -fx-border: 0;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+}
+
+.ChooseLabel{
+    -fx-font-family: 'Arial';
+    -fx-font-size: 12pt;
+    -fx-padding: 10,10,10,10;
+    -fx-background-color: rgba(0,0,0,0);
+}

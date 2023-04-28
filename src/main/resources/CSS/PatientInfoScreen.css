@@ -1,15 +1,15 @@
-.PatientTypeLeft{
+.PatientInfoLeft{
     -fx-background-color: linear-gradient(to top left,#5b2fca,#3CDEC3);
     -fx-transition: all 0.3s ease-in-out;
 }
 
-.PatientTypeRight{
+.PatientInfoRight{
     -fx-background-color: #e2f8fb;
 }
 
-.PatientTypeButton{
-    -fx-min-width: 200px;
-    -fx-max-width: 250px;
+.PatientInfoButton{
+    -fx-min-width: 240px;
+    -fx-max-width: 400px;
     -fx-font-family: 'Arial';
     -fx-font-size: 14pt;
     -fx-background-color: #5b2fca;
@@ -18,7 +18,7 @@
     -fx-background-radius: 25px;
     -fx-cursor: hand;
 }
-.PatientTypeButton:hover {
+.PatientInfoButton:hover {
     -fx-min-width: 240px;
     -fx-max-width: 400px;
     -fx-background-color: transparent;
@@ -34,25 +34,46 @@
     -fx-cursor: hand;
 }
 
-.PatientTypeLabel{
+.ExistingPatientButton{
+    -fx-background-color: transparent;
+    -fx-text-fill: blue;
+    -fx-underline: true;
+    -fx-font-size: 12pt;
+    -fx-cursor: hand;
+}
+
+.PatientInfoLabel{
+    -fx-font-size: 35pt;
+    -fx-border-width: 10000;
+    -fx-text-fill: #0b4a52;
+    -fx-font-family: 'Arial';
+    -fx-padding: 10,10,10,10;
+    -fx-font-weight: bolder;
+}
+
+.TextField{
+    -fx-font-size: 12pt;
+    -fx-font-family: 'Arial';
+    -fx-font-weight: normal;
+}
+
+.GeneralTextLabel{
+    -fx-font-size: 12pt;
+    -fx-border-width: 80;
+    -fx-text-fill: #0b4a52;
+    -fx-font-family: 'Arial';
+    -fx-padding: 10,10,10,10;
+    -fx-font-weight: normal;
+
+}
+.ErrorMessageLabel{
     -fx-font-family: 'Arial';
     -fx-font-size: 12pt;
     -fx-padding: 10,10,10,10;
     -fx-background-color: rgba(0,0,0,0);
 }
 
-.PatientTypeLabel{
-    -fx-font-size: 35pt;
-    -fx-border-width: 10000;
-    -fx-text-fill: #0b4a52;
-    -fx-font-family: 'Arial';
-    -fx-padding: 10,10,10,10;
-    -fx-alignment: center;
-    -fx-font-weight: bolder;
-
-}
-
-.PatientTypeIcon{
+.PatientInfoIcon{
     -fx-border-color: #0b4a52;
 }
 
