@@ -27,11 +27,12 @@ public class PatientTypeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         newPatientButton.setOnAction( e ->{
-            ManagementUtils.changeScence(e,"PatientInfoScreen.fxml","Add new patient");
+            ManagementUtils.changeScence(e,"PatientInfoScreen.fxml","Add New Patient");
         });
 
         existingPatientButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
+//            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
+            ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
         });
 
     }

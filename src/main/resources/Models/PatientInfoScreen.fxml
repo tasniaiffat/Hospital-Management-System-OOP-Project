@@ -59,6 +59,11 @@
                </font>
             </Label>
             <TextArea fx:id="newPatientCurrentTreatment" layoutX="379.0" layoutY="394.0" prefHeight="94.0" prefWidth="297.0" promptText="Previously undergone treatments and medications" styleClass="TextField" stylesheets="@../CSS/PatientInfoScreen.css" />
+            <Label fx:id="errorMessage" layoutX="303.0" layoutY="529.0" prefHeight="21.0" prefWidth="14.0">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

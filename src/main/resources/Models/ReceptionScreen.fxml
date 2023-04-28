@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -27,13 +26,12 @@
                         <Image url="@../Assets/WelcomeLogo.png" />
                     </image>
                 </ImageView>
-                <Button layoutX="203.0" layoutY="226.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Make an Appointment" />
-                <Button layoutX="203.0" layoutY="277.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Patient Records" />
-                <Button layoutX="203.0" layoutY="325.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Pharmacy" />
-                <Button layoutX="203.0" layoutY="372.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Lab Test" />
-                <Button layoutX="203.0" layoutY="419.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Billing" />
-            <Label layoutX="218.0" layoutY="542.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/ReceptionScreen.css" text="Patient not enlisted?" />
-            <Button fx:id="newPatientButton" layoutX="372.0" layoutY="545.0" mnemonicParsing="false" styleClass="NewPatientButton" stylesheets="@../CSS/ReceptionScreen.css" text="Add New Patient" />
+                <Button fx:id="appointmentButton" layoutX="203.0" layoutY="226.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Make an Appointment" />
+                <Button fx:id="patientRecordButton" layoutX="203.0" layoutY="277.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Patient Records" />
+                <Button fx:id="pharmacyButton" layoutX="203.0" layoutY="325.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Pharmacy" />
+                <Button fx:id="labTestButton" layoutX="203.0" layoutY="372.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Lab Test" />
+                <Button fx:id="billingButton" layoutX="203.0" layoutY="419.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Billing" />
+            <Button fx:id="anotherPatientButton" layoutX="203.0" layoutY="473.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Select another Patient" />
             </children>
         </AnchorPane>
     </center>

@@ -73,7 +73,7 @@ public class PatientInfoController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         existingPatientButton.setOnAction( e ->{
-            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
+            ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
         });
 
         addPatientButton.setOnAction( e -> {
@@ -95,18 +95,20 @@ public class PatientInfoController implements Initializable {
             String patientCurrentTreatmentString = newPatientCurrentTreatment.getText();
             ArrayList<String> patientCurrentTreatment = new ArrayList<>(Arrays.asList(patientCurrentTreatmentString.split(",")));
             for(int i = 0; i<patientCurrentTreatment.size();i++){
-                patientHistory.set(i,patientCurrentTreatment.get(i).trim());
+                patientCurrentTreatment.set(i,patientCurrentTreatment.get(i).trim());
             }
 
             Patient patient = new Patient(patientName,patientContact,patientEmail,patientAddress,patientDOB,patientGender,patientHistory,patientCurrentTreatment);
 
             boolean successfulAdd = patient.addPatient(errorMessage);
-            try {
-                Thread.sleep(2000); // Sleep for 5 seconds
-            } catch (InterruptedException s) {
-                s.printStackTrace();
-            }
+
             if(successfulAdd){
+                ChoosePatientController.chosenID = patient.getID();
+                try {
+                    Thread.sleep(2000); // Sleep for 2 seconds
+                } catch (InterruptedException s) {
+                    s.printStackTrace();
+                }
                 ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             }
 

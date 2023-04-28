@@ -21,6 +21,9 @@ public abstract class Person {
         this.gender = gender;
     }
 
+    public Person() {
+    }
+
     public String getID() {
         return ID;
     }
