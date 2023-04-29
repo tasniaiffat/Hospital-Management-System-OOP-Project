@@ -187,12 +187,14 @@ public class Patient extends Person implements PatientInterface {
             int status = statement.executeUpdate();
 
             if(status==1){
-                ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
                 errorMessage.setText("Patient Removed!");
                 successfulRemove = true;
+                ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
+
             }
             else{
                 errorMessage.setText("Unable to remove patient");
+                ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
             }
         } catch (Exception s){
             s.printStackTrace();
