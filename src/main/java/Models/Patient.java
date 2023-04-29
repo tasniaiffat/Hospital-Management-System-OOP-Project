@@ -184,7 +184,6 @@ public class Patient extends Person implements PatientInterface {
 
         try {
             PreparedStatement statement = connectDB.prepareStatement(connectQuery);
-//            statement.setString(1,this.ID);
 
 
 
