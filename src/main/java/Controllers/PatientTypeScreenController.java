@@ -10,13 +10,16 @@ import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PatientTypeController implements Initializable {
+public class PatientTypeScreenController implements Initializable {
 
     @FXML
     private Button existingPatientButton;
 
     @FXML
     private Button newPatientButton;
+
+    @FXML
+    private Button logOutButton;
 
     @FXML
     private ImageView patientTypeImage;
@@ -33,6 +36,10 @@ public class PatientTypeController implements Initializable {
         existingPatientButton.setOnAction( e -> {
 //            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
+        });
+
+        logOutButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"WelcomeScreen.fxml","Hello!");
         });
 
     }

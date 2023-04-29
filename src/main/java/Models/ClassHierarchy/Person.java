@@ -1,7 +1,6 @@
 package Models.ClassHierarchy;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public abstract class Person {
     protected String ID;

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" stylesheets="@../CSS/PatientTypeScreen.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PatientTypeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" stylesheets="@../CSS/PatientTypeScreen.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PatientTypeScreenController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="PatientTypeCenter" stylesheets="@../CSS/PatientTypeScreen.css" BorderPane.alignment="CENTER">
          <children>
@@ -16,6 +19,7 @@
                </image>
             </ImageView>
             <Label fx:id="patientTypeLabel" layoutX="160.0" layoutY="319.0" styleClass="PatientTypeLabel" stylesheets="@../CSS/PatientTypeScreen.css" text="Select Patient Type" />
+            <Button fx:id="logOutButton" layoutX="570.0" layoutY="35.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="124.0" styleClass="LogOutButton" stylesheets="@../CSS/ReceptionScreen.css" text="Log Out" />
          </children>
       </AnchorPane>
    </center>
