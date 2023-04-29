@@ -72,13 +72,19 @@ public class ChoosePatientController implements Initializable {
                 chosenID = ID;
             }
 
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException ex) {
+                throw new RuntimeException(ex);
+            }
+
             ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
         });
 
         removePatientButton.setOnAction( e -> {
             Patient selectedPatient = choosePatientTable.getSelectionModel().getSelectedItem();
             if (selectedPatient != null) {
-                selectedPatient.removePatient(errorMessage);
+                selectedPatient.removePatient(e,errorMessage);
             }
         });
 

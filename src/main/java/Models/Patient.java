@@ -4,6 +4,7 @@ import Controllers.ChoosePatientController;
 import Models.ClassHierarchy.Gender;
 import Models.ClassHierarchy.PatientInterface;
 import Models.ClassHierarchy.Person;
+import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 
@@ -133,7 +134,7 @@ public class Patient extends Person implements PatientInterface {
 
     }
 
-    public boolean addPatient(Label errorMessage){
+    public boolean addPatient(ActionEvent e, Label errorMessage){
         boolean successfulAdd = false;
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
@@ -162,6 +163,7 @@ public class Patient extends Person implements PatientInterface {
                 errorMessage.setTextFill(Color.web("#61cb34"));
                 errorMessage.setText("Patient Added!");
                 successfulAdd = true;
+                ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
             }
             else{
                 errorMessage.setText("Unable to add patient");
@@ -175,7 +177,7 @@ public class Patient extends Person implements PatientInterface {
         return successfulAdd;
     }
 
-    public boolean removePatient(Label errorMessage){
+    public boolean removePatient(ActionEvent e, Label errorMessage){
         boolean successfulRemove = false;
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
@@ -192,11 +194,13 @@ public class Patient extends Person implements PatientInterface {
             if(status==1){
                 errorMessage.setText("Patient Removed!");
                 successfulRemove = true;
+                ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
+
             }
             else{
                 errorMessage.setText("Unable to remove patient");
+                ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
             }
-
 
 
         } catch (Exception s){
