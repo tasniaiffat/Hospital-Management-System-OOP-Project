@@ -105,9 +105,8 @@ public class Patient extends Person implements PatientInterface {
     public String generateID(){
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
-//        String connectQuery = "SELECT COUNT(*) FROM `hospital`.`patientinfo`;\n";
         String connectQuery = "SELECT ID from hospital.patientinfo ORDER BY ID DESC LIMIT 1";
-//        int count=0;
+
         int IDNumber=1;
 
 
@@ -119,13 +118,10 @@ public class Patient extends Person implements PatientInterface {
 
             // Get the result
             if (rs.next()) {
-//                count = rs.getInt(1);
-//                System.out.println("Number of entries: " + count);
                 String patientID = rs.getString(1).substring(3);
                 IDNumber = Integer.parseInt(patientID);
                 IDNumber++;
             }
-//            count++;
 
         } catch (Exception s){
             s.printStackTrace();
@@ -134,25 +130,32 @@ public class Patient extends Person implements PatientInterface {
 
     }
 
-    public boolean addPatient(Label errorMessage){
+    public boolean addPatient(ActionEvent e, Label errorMessage){
         boolean successfulAdd = false;
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
         String history = String.join(",",medicalHistory);
         String treatment = String.join(",",currentTreatment);
-        String date = this.getDate().toString();
+        String date = null;
+        if(this.date != null)
+            date = this.date.toString();
+        if(this.ID==null || this.name==null || this.contactNo==null || this.emailAddress==null || this.address==null || this.date == null
+                || this.gender==null || this.medicalHistory==null || this.currentTreatment == null){
+            errorMessage.setText("You have to fill up all the fields!");
+            return successfulAdd;
+        }
 
         String connectQuery = "INSERT INTO `hospital`.`patientinfo`(`ID`,`Name`,`Contact No`,`Email Address`,`Address`,`Date of Birth`,`Gender`,`Medical History`,`Current Treatment`) values (?,?,?,?,?,?,?,?,?);\n";
 
         try {
             PreparedStatement statement = connectDB.prepareStatement(connectQuery);
-            statement.setString(1,this.getID());
-            statement.setString(2,this.getName());
-            statement.setString(3,this.getContactNo());
-            statement.setString(4,this.getEmailAddress());
-            statement.setString(5,this.getAddress());
+            statement.setString(1,this.ID);
+            statement.setString(2,this.name);
+            statement.setString(3,this.contactNo);
+            statement.setString(4,this.emailAddress);
+            statement.setString(5,this.address);
             statement.setString(6,date);
-            statement.setString(7,this.getGender().toString());
+            statement.setString(7,this.gender.toString());
             statement.setString(8,history);
             statement.setString(9,treatment);
 
@@ -160,12 +163,13 @@ public class Patient extends Person implements PatientInterface {
             int status = statement.executeUpdate();
 
             if(status==1){
+//                errorMessage.setTextFill(Color.web("#61cb34"));
+//                errorMessage.setText("Patient Added!");
                 successfulAdd = true;
             }
             else{
                 errorMessage.setText("Unable to add patient");
             }
-
 
 
         } catch (Exception s){
@@ -183,19 +187,13 @@ public class Patient extends Person implements PatientInterface {
 
         try {
             PreparedStatement statement = connectDB.prepareStatement(connectQuery);
-//            statement.setString(1,this.ID);
             int status = statement.executeUpdate();
-
+            ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
             if(status==1){
-                errorMessage.setText("Patient Removed!");
+//                errorMessage.setText("Patient Removed!");
                 successfulRemove = true;
-                ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
+            }
 
-            }
-            else{
-                errorMessage.setText("Unable to remove patient");
-                ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
-            }
         } catch (Exception s){
             s.printStackTrace();
         }

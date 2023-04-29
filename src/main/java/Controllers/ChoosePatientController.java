@@ -71,11 +71,11 @@ public class ChoosePatientController implements Initializable {
             if (selectedPatient != null) {
                 String ID = selectedPatient.getID();
                 chosenID = ID;
+                ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             }
             else{
                 errorMessage.setText("Patient Not Selected");
             }
-            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
         });
 
         removePatientButton.setOnAction( e -> {
