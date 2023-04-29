@@ -101,14 +101,9 @@ public class PatientInfoController implements Initializable {
             Patient patient = new Patient(patientName,patientContact,patientEmail,patientAddress,patientDOB,patientGender,patientHistory,patientCurrentTreatment);
 
             boolean successfulAdd = patient.addPatient(errorMessage);
-
             if(successfulAdd){
                 ChoosePatientController.chosenID = patient.getID();
-                try {
-                    Thread.sleep(2000); // Sleep for 2 seconds
-                } catch (InterruptedException s) {
-                    s.printStackTrace();
-                }
+
                 ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             }
 
