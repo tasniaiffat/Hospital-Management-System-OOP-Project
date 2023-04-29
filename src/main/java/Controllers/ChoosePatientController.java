@@ -15,6 +15,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -70,15 +71,11 @@ public class ChoosePatientController implements Initializable {
             if (selectedPatient != null) {
                 String ID = selectedPatient.getID();
                 chosenID = ID;
+                ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             }
-
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException ex) {
-                throw new RuntimeException(ex);
+            else{
+                errorMessage.setText("Patient Not Selected");
             }
-
-            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
         });
 
         removePatientButton.setOnAction( e -> {

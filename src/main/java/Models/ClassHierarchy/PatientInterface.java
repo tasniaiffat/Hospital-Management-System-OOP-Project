@@ -12,4 +12,5 @@ public interface PatientInterface {
     public void setCurrentTreatment(List<String> currentTreatment);
     public boolean addPatient(ActionEvent e, Label errorMessage);
     public boolean removePatient(ActionEvent e, Label errorMessage);
+
 }

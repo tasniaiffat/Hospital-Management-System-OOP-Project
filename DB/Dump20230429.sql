@@ -30,14 +30,25 @@ CREATE TABLE `logininfo` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `logininfo`
+-- Table structure for table `patientinfo`
 --
 
-LOCK TABLES `logininfo` WRITE;
-/*!40000 ALTER TABLE `logininfo` DISABLE KEYS */;
-INSERT INTO `logininfo` VALUES ('admin@gmail.com','admin123'),('hello@gmail.com','hello123');
-/*!40000 ALTER TABLE `logininfo` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `patientinfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `patientinfo` (
+  `ID` varchar(10) NOT NULL,
+  `Name` varchar(45) NOT NULL,
+  `Contact No` varchar(14) NOT NULL,
+  `Email Address` varchar(45) NOT NULL,
+  `Address` varchar(60) NOT NULL,
+  `Date of Birth` varchar(45) DEFAULT NULL,
+  `Gender` enum('Male','Female') NOT NULL,
+  `Medical History` varchar(100) NOT NULL,
+  `Current Treatment` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -48,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-10 21:36:48
+-- Dump completed on 2023-04-29 16:27:16

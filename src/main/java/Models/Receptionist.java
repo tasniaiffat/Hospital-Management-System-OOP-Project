@@ -10,13 +10,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Objects;
 
 public class Receptionist {
     private String emailAddress;
     private String password;
 
-    private boolean successfulLogIn = false;
-    private boolean successfulSignUp = false;
 
     public Receptionist() {
         this.emailAddress = "";
@@ -47,6 +46,11 @@ public class Receptionist {
     public boolean logIn(TextField loginEmail, PasswordField loginPass, Label errorMessage){
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
+        boolean successfulLogIn = false;
+        if(loginEmail.getText()==null || loginEmail.getText().equals("") || loginPass.getText()==null || loginPass.getText().equals("")){
+            errorMessage.setText("You have to fill up all the fields!");
+            return successfulLogIn;
+        }
 
         String connectQuery = "SELECT `email address`, `password` FROM `hospital`.logininfo;\n";
 
@@ -78,11 +82,19 @@ public class Receptionist {
         return successfulLogIn;
     }
 
-    public boolean signUp(TextField signUEmail, PasswordField signUpPass, PasswordField signUpConfirmPass, Label errorMessage){
+    public boolean signUp(TextField signUpEmail, PasswordField signUpPass, PasswordField signUpConfirmPass, Label errorMessage){
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
+        boolean successfulSignUp = false;
 
-        emailAddress = signUEmail.getText();
+        if(signUpEmail.getText()==null || signUpEmail.getText().equals("") || signUpPass.getText()==null
+                || signUpPass.getText().equals("") || signUpConfirmPass.getText()==null || signUpConfirmPass.getText().equals("")){
+            errorMessage.setText("You have to fill up all the fields!");
+            return successfulSignUp;
+        }
+
+
+        emailAddress = signUpEmail.getText();
         password = signUpPass.getText();
         if(!password.equals(signUpConfirmPass.getText())){
             errorMessage.setText("Passwords don't match");
@@ -101,7 +113,7 @@ public class Receptionist {
             if(status==1){
                 errorMessage.setTextFill(Color.web("#61cb34"));
                 errorMessage.setText("User Signed In!");
-                signUEmail.setText("");
+                signUpEmail.setText("");
                 signUpPass.setText("");
                 signUpConfirmPass.setText("");
             }
