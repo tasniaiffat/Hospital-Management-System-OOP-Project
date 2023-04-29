@@ -13,9 +13,9 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChoosePatientController">
    <left>
-      <AnchorPane prefHeight="680.0" prefWidth="294.0" styleClass="ChoosePatientLeft" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="680.0" prefWidth="281.0" styleClass="ChoosePatientLeft" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="241.0" fitWidth="218.0" layoutX="29.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="198.0" fitWidth="190.0" layoutX="46.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Assets/EHR.png" />
                </image>
@@ -38,7 +38,7 @@
             <Label layoutX="197.0" layoutY="636.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/ReceptionScreen.css" text="Patient not enlisted?" />
             <Button fx:id="newPatientButton" layoutX="355.0" layoutY="638.0" mnemonicParsing="false" styleClass="NewPatientButton" stylesheets="@../CSS/ReceptionScreen.css" text="Add New Patient" />
             <Button fx:id="removePatientButton" layoutX="575.0" layoutY="48.0" minWidth="108.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChoosePatientScreen.css" text="Remove" />
-            <Label fx:id="errorMessage" layoutX="280.0" layoutY="99.0" prefHeight="21.0" prefWidth="23.0" textFill="#f20000">
+            <Label fx:id="errorMessage" alignment="CENTER" layoutX="98.0" layoutY="91.0" prefHeight="38.0" prefWidth="524.0" text=" " textAlignment="CENTER" textFill="#f20000">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
