@@ -69,6 +69,7 @@
 .ErrorMessageLabel{
     -fx-font-family: 'Arial';
     -fx-font-size: 12pt;
+    -fx-font-weight: bold;
     -fx-padding: 10,10,10,10;
     -fx-background-color: rgba(0,0,0,0);
 }
@@ -77,5 +78,25 @@
     -fx-border-color: #0b4a52;
 }
 
+.LogOutButton {
+    -fx-background-color: #008CBA;
+    -fx-font-family: 'Arial';
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+    -fx-padding: 4;
+}
 
+.LogOutButton:hover {
+    -fx-background-color: transparent;
+    -fx-background-radius: 25px;
+    -fx-text-fill: #008CBA;
+    -fx-border-width: 2px;
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 25px;
+}
 

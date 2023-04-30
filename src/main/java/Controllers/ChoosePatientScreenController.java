@@ -15,19 +15,16 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ChoosePatientController implements Initializable {
+public class ChoosePatientScreenController implements Initializable {
 
     @FXML
     private TableView<Patient> choosePatientTable;
@@ -56,6 +53,8 @@ public class ChoosePatientController implements Initializable {
     private Button removePatientButton;
     @FXML
     private Button newPatientButton;
+    @FXML
+    private Button logOutButton;
 
     ObservableList<Patient> patientList = FXCollections.observableArrayList();
 
@@ -87,6 +86,10 @@ public class ChoosePatientController implements Initializable {
 
         newPatientButton.setOnAction( e -> {
             ManagementUtils.changeScence(e,"PatientInfoScreen.fxml","Add new patient");
+        });
+
+        logOutButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"WelcomeScreen.fxml","Hello!");
         });
 
     }
@@ -122,7 +125,7 @@ public class ChoosePatientController implements Initializable {
 
 
         } catch (Exception e){
-            Logger.getLogger(ChoosePatientController.class.getName()).log(Level.SEVERE,null, e);
+            Logger.getLogger(ChoosePatientScreenController.class.getName()).log(Level.SEVERE,null, e);
         }
     }
 

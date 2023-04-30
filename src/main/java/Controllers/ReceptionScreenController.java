@@ -1,37 +1,21 @@
 package Controllers;
 
 
-import Models.ClassHierarchy.Gender;
-import Models.DBUtils;
 import Models.ManagementUtils;
 import Models.Patient;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Label;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import static Controllers.ChoosePatientController.*;
 
 
-public class ReceptionController implements Initializable{
+public class ReceptionScreenController implements Initializable{
 
-    String ID = ChoosePatientController.chosenID;
+    String ID = ChoosePatientScreenController.chosenID;
 
     @FXML
     private Button appointmentButton;
@@ -53,19 +37,29 @@ public class ReceptionController implements Initializable{
 
     @FXML
     private Button anotherPatientButton;
+
+    @FXML
+    private Button logOutButton;
+
+    @FXML
+    private Label patientName;
+
     Patient patient = new Patient(ID);
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
+        patientName.setText(patient.getName());
         patientRecordButton.setOnAction( e -> {
-            System.out.println(patient.getID());
-            System.out.println(patient.getName());
-            System.out.println(patient.getEmailAddress());
+            ManagementUtils.changeScence(e,"DashboardScreen.fxml","Dashboard");
         });
         anotherPatientButton.setOnAction( e -> {
             ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Select Patient Type");
+        });
+
+        logOutButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"WelcomeScreen.fxml","Hello!");
         });
 
     }

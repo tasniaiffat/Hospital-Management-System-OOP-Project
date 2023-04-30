@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LogInController implements Initializable{
+public class LogInScreenController implements Initializable{
     @FXML
     private Button loginButton;
 
