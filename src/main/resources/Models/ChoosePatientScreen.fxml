@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChoosePatientController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChoosePatientScreenController">
    <left>
       <AnchorPane prefHeight="680.0" prefWidth="281.0" styleClass="ChoosePatientLeft" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
          <children>
@@ -25,24 +25,25 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="ChoosePatientCenter" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="choosePatientTable" layoutX="25.0" layoutY="137.0" prefHeight="501.0" prefWidth="656.0">
+            <TableView fx:id="choosePatientTable" layoutX="25.0" layoutY="137.0" prefHeight="501.0" prefWidth="676.0">
               <columns>
                 <TableColumn fx:id="choosePatientID" prefWidth="102.0" text="ID" />
                 <TableColumn fx:id="choosePatientName" prefWidth="205.0" text="Name" />
-                  <TableColumn fx:id="choosePatientEmailAddress" prefWidth="185.0" text="Email Address" />
-                  <TableColumn fx:id="choosePatientContactNo" prefWidth="156.0" text="Contact no" />
+                  <TableColumn fx:id="choosePatientEmailAddress" prefWidth="211.0" text="Email Address" />
+                  <TableColumn fx:id="choosePatientContactNo" prefWidth="155.0" text="Contact no" />
               </columns>
             </TableView>
-            <TextField fx:id="choosePatientTxtField" layoutX="27.0" layoutY="46.0" prefHeight="38.0" prefWidth="426.0" promptText="Enter Keyword" />
-            <Button fx:id="selectPatientButton" layoutX="462.0" layoutY="48.0" minWidth="103.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChoosePatientScreen.css" text="Select" />
+            <TextField fx:id="choosePatientTxtField" layoutX="27.0" layoutY="64.0" prefHeight="38.0" prefWidth="434.0" promptText="Enter Keyword" />
+            <Button fx:id="selectPatientButton" layoutX="480.0" layoutY="66.0" minWidth="103.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChoosePatientScreen.css" text="Select" />
             <Label layoutX="197.0" layoutY="636.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/ReceptionScreen.css" text="Patient not enlisted?" />
             <Button fx:id="newPatientButton" layoutX="355.0" layoutY="638.0" mnemonicParsing="false" styleClass="NewPatientButton" stylesheets="@../CSS/ReceptionScreen.css" text="Add New Patient" />
-            <Button fx:id="removePatientButton" layoutX="575.0" layoutY="48.0" minWidth="108.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChoosePatientScreen.css" text="Remove" />
-            <Label fx:id="errorMessage" alignment="CENTER" layoutX="98.0" layoutY="91.0" prefHeight="38.0" prefWidth="524.0" text=" " textAlignment="CENTER" textFill="#f20000">
+            <Button fx:id="removePatientButton" layoutX="593.0" layoutY="66.0" minWidth="108.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChoosePatientScreen.css" text="Remove" />
+            <Label fx:id="errorMessage" alignment="CENTER" layoutX="98.0" layoutY="102.0" prefHeight="27.0" prefWidth="524.0" text=" " textAlignment="CENTER" textFill="#f20000">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
+            <Button fx:id="logOutButton" layoutX="582.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="116.0" styleClass="LogOutButton" stylesheets="@../CSS/ReceptionScreen.css" text="Log Out" />
          </children>
       </AnchorPane>
    </center>
