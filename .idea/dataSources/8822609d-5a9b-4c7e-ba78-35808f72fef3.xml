@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.48">
-    <root id="1"/>
+    <root id="1">
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <ServerVersion>8.0.33</ServerVersion>
+    </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
     </collation>
@@ -942,87 +946,97 @@
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="299" parent="288" name="logininfo">
+    <table id="299" parent="288" name="DoctorInfo">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="300" parent="288" name="patientinfo">
+    <table id="300" parent="288" name="logininfo">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="301" parent="299" name="email address">
-      <DasType>varchar(70)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="302" parent="299" name="password">
-      <DasType>varchar(45)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <index id="303" parent="299" name="PRIMARY">
-      <ColNames>email address</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="304" parent="299" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="305" parent="300" name="ID">
+    <table id="301" parent="288" name="patientinfo">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="302" parent="299" name="ID">
       <DasType>varchar(10)|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="306" parent="300" name="Name">
+    <column id="303" parent="299" name="Name">
       <DasType>varchar(45)|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="307" parent="300" name="Contact No">
-      <DasType>varchar(14)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="304" parent="299" name="Speciality">
+      <DasType>varchar(45)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="308" parent="300" name="Email Address">
-      <DasType>varchar(45)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="305" parent="299" name="Contact No">
+      <DasType>varchar(14)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="309" parent="300" name="Address">
-      <DasType>varchar(60)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="306" parent="299" name="Email Address">
+      <DasType>varchar(45)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="310" parent="300" name="Date of Birth">
+    <column id="307" parent="299" name="Address">
+      <DasType>varchar(60)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="308" parent="299" name="Date of Birth">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="309" parent="299" name="Gender">
+      <DasType>enum(&apos;Male&apos;, &apos;Female&apos;)|0e</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="310" parent="299" name="Qualification">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="311" parent="300" name="email address">
+      <DasType>varchar(70)|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="312" parent="300" name="password">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="313" parent="301" name="ID">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="314" parent="301" name="Name">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="315" parent="301" name="Contact No">
+      <DasType>varchar(14)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="316" parent="301" name="Email Address">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="317" parent="301" name="Address">
+      <DasType>varchar(60)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="318" parent="301" name="Date of Birth">
       <DasType>varchar(45)|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="311" parent="300" name="Gender">
+    <column id="319" parent="301" name="Gender">
       <DasType>enum(&apos;Male&apos;, &apos;Female&apos;)|0e</DasType>
-      <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="312" parent="300" name="Medical History">
+    <column id="320" parent="301" name="Medical History">
       <DasType>varchar(100)|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="313" parent="300" name="Current Treatment">
+    <column id="321" parent="301" name="Current Treatment">
       <DasType>varchar(50)|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <index id="314" parent="300" name="PRIMARY">
-      <ColNames>ID</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="315" parent="300" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
   </database-model>
 </dataSource>
