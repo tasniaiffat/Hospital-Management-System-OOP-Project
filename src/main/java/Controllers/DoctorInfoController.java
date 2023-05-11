@@ -57,7 +57,7 @@ public class DoctorInfoController implements Initializable {
     private TextField newDoctorName;
 
     @FXML
-    private TextField qualification;
+    private TextField DoctorQualification;
 
     @FXML
     private TextField Specialbox;
@@ -86,7 +86,7 @@ public class DoctorInfoController implements Initializable {
             String DoctorContact = newDoctorContact.getText();
             String DoctorAddress = newDoctorAddress.getText();
             String DoctorEmail = newDoctorEmail.getText();
-            String doctorqualification = qualification.getText();
+            String doctorqualification = DoctorQualification.getText();
             String speciality = Specialbox.getText();
             boolean isavailable = false;
 

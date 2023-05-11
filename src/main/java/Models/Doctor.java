@@ -18,6 +18,7 @@ public class Doctor extends Person implements DoctorInterface{
 
     public Doctor(String name, String contactNo, String emailAddress, String address, LocalDate date, Gender gender, String qualification, String speciality, boolean isAvailable) {
         super(name, contactNo, emailAddress, address, date, gender);
+        this.ID = generateID();
         this.qualification = qualification;
         this.speciality = speciality;
         this.isAvailable = isAvailable;
@@ -128,6 +129,7 @@ public class Doctor extends Person implements DoctorInterface{
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
         String Speciality = "";
+        Speciality = this.speciality;
         //String history = String.join(",",medicalHistory);
         //String treatment = String.join(",",currentTreatment);
         String date = this.getDate().toString();
@@ -167,6 +169,38 @@ public class Doctor extends Person implements DoctorInterface{
         }
         return successfulAdd;
     }
+
+    public boolean removeDoctor(Label errorMessage, ActionEvent e){
+        boolean successfulRemove = false;
+        DBUtils connectNow = new DBUtils();
+        Connection connectDB = connectNow.getConnection();
+
+        String connectQuery = "DELETE FROM hospital.DoctorInfo WHERE ID= "+"'"+this.ID+"';";
+
+        try {
+            PreparedStatement statement = connectDB.prepareStatement(connectQuery);
+//            statement.setString(1,this.ID);
+
+
+
+            int status = statement.executeUpdate();
+
+            if(status==1){
+                errorMessage.setText("Doctor Removed!");
+                successfulRemove = true;
+            }
+            else{
+                errorMessage.setText("Unable to remove Doctor");
+            }
+
+
+
+        } catch (Exception s){
+            s.printStackTrace();
+        }
+        return successfulRemove;
+    }
+
 
 
 

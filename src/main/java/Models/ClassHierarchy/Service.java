@@ -5,7 +5,7 @@ import Models.Patient;
 import java.time.LocalDate;
 
 public abstract class Service {
-    private String ID;
+    protected String ID;
     private Patient patient;
     private LocalDate dateOfService;
 

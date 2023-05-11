@@ -47,7 +47,7 @@
                     </font>
                 </CheckBox>
                 <Text fill="#0b4a52" layoutX="375.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="GeneralTextLabel" text="Gender:" wrappingWidth="71.21875" />
-                <Button fx:id="addPatientButton" layoutX="212.0" layoutY="578.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="PatientInfoButton" stylesheets="@../CSS/PatientInfoScreen.css" text="Add Doctor" />
+                <Button fx:id="addDoctorButton" layoutX="212.0" layoutY="578.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="PatientInfoButton" stylesheets="@../CSS/PatientInfoScreen.css" text="Add Doctor" />
                 <Label fx:id="newPatientLabel" layoutX="213.0" layoutY="79.0" styleClass="PatientInfoLabel" stylesheets="@../CSS/PatientInfoScreen.css" text="New Doctor" />
                 <Label fx:id="errorMessage" layoutX="209.0" layoutY="513.0" prefHeight="40.0" prefWidth="332.0" styleClass="ErrorMessageLabel" stylesheets="@../CSS/PatientInfoScreen.css" textFill="#f20000">
                     <font>
