@@ -38,7 +38,7 @@ public class SignUpScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         logInScreenButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"LoginScreen.fxml","Login");
+            ManagementUtils.changeScence(e,"LogInScreen.fxml","Login");
         });
 
         signUpButton.setOnAction( e -> {

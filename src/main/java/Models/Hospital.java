@@ -19,7 +19,7 @@ public class Hospital extends Application {
 
         stage.setTitle("Hello!");
         stage.setScene(scene);
-        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/assets/icon.png")));
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Assets/icon.png")));
         stage.getIcons().add(image);
         stage.show();
     }
