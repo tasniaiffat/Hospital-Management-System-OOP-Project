@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ReceptionScreenController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ReceptionScreenController">
     <left>
         <AnchorPane prefHeight="680.0" prefWidth="283.0" styleClass="Reception_LeftAnchor" stylesheets="@../CSS/ReceptionScreen.css" BorderPane.alignment="CENTER">
             <children>
@@ -32,8 +30,8 @@
                 <Button fx:id="pharmacyButton" layoutX="203.0" layoutY="325.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Pharmacy" />
                 <Button fx:id="labTestButton" layoutX="203.0" layoutY="372.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Lab Test" />
                 <Button fx:id="billingButton" layoutX="203.0" layoutY="419.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Billing" />
-            <Button fx:id="anotherPatientButton" layoutX="203.0" layoutY="473.0" mnemonicParsing="false" styleClass="ReceptionButton" stylesheets="@../CSS/ReceptionScreen.css" text="Select another Patient" />
-            <Label layoutX="152.0" layoutY="82.0" styleClass="ReceptionText" stylesheets="@../CSS/ReceptionScreen.css" text="Welcome to the Reception" />
+            <Button fx:id="anotherPatientButton" layoutX="203.0" layoutY="586.0" mnemonicParsing="false" styleClass="ReceptionSpecialButton" stylesheets="@../CSS/ReceptionScreen.css" text="Select another Patient" />
+            <Label layoutX="132.0" layoutY="82.0" styleClass="ReceptionText" stylesheets="@../CSS/ReceptionScreen.css" text="Welcome to the Reception" />
             <Label fx:id="patientName" layoutX="159.0" layoutY="143.0" prefHeight="61.0" prefWidth="435.0" styleClass="ReceptionText" stylesheets="@../CSS/ReceptionScreen.css" />
             <Button fx:id="logOutButton" layoutX="570.0" layoutY="28.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="124.0" styleClass="LogOutButton" stylesheets="@../CSS/ReceptionScreen.css" text="Log Out" />
             </children>

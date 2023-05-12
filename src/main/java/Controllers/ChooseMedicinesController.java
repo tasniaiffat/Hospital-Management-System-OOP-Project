@@ -1,2 +1,4 @@
-package Controllers;public class ChooseMedicinesController {
+package Controllers;
+
+public class ChooseMedicinesController {
 }

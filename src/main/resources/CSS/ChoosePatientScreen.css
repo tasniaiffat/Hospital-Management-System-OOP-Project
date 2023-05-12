@@ -47,11 +47,11 @@
 }
 
 .LogOutButton {
-    -fx-background-color: #008CBA;
+    -fx-background-color: #DE5D83;
     -fx-font-family: 'Arial';
     -fx-text-fill: #fff;
     -fx-font-weight: bold;
-    -fx-font-size: 24px;
+    -fx-font-size: 20px;
     -fx-border-radius: 2px;
     -fx-background-radius: 25px;
     -fx-cursor: hand;
