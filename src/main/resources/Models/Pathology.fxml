@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PathologyController">
+    <left>
+        <AnchorPane prefHeight="680.0" prefWidth="309.0" styleClass="ChoosePatientLeft" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="290.0" fitWidth="287.0" layoutX="13.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Assets/LabTest.png" />
+                    </image>
+                </ImageView>
+            </children></AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="ChoosePatientCenter" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
+            <children>
+                <TableView fx:id="PathologyTable" layoutX="40.0" layoutY="90.0" prefHeight="548.0" prefWidth="458.0" styleClass="Table" stylesheets="@../CSS/Pathology.css">
+                    <columns>
+                        <TableColumn fx:id="TestName" prefWidth="202.0" text="Lab Test" />
+                        <TableColumn fx:id="TestPrice" prefWidth="137.0" text="Price (BDT)" />
+                        <TableColumn fx:id="TestRoom" prefWidth="117.0" text="Room No." />
+                    </columns>
+                </TableView>
+                <Button fx:id="PathologyButton" layoutX="518.0" layoutY="90.0" minWidth="103.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="146.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Select" />
+                <Button fx:id="PathologyButton" layoutX="515.0" layoutY="138.0" minWidth="108.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="146.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Remove" />
+                <Button fx:id="logOutButton" layoutX="638.0" layoutY="31.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="43.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="⏎">
+                    <font>
+                        <Font size="11.0" />
+                    </font></Button>
+            <Button fx:id="PathologyConfirmButton" layoutX="522.0" layoutY="595.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="145.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="Confirm">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Label layoutX="194.0" layoutY="24.0" styleClass="Label" stylesheets="@../CSS/Pathology.css" text="Lab Tests" />
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

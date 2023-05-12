@@ -9,6 +9,8 @@ public abstract class Service {
     private Patient patient;
     private LocalDate dateOfService;
 
+    private int totalBill;
+
     public Service(String ID, Patient patient, LocalDate dateOfService) {
         this.ID = ID;
         this.patient = patient;
