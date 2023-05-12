@@ -48,3 +48,25 @@
 
 }
 
+.LogOutButton {
+    -fx-background-color: #DE5D83;
+    -fx-font-family: 'Arial';
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+    -fx-padding: 4;
+}
+
+.LogOutButton:hover {
+    -fx-background-color: transparent;
+    -fx-background-radius: 25px;
+    -fx-text-fill: #008CBA;
+    -fx-border-width: 2px;
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 25px;
+}
+

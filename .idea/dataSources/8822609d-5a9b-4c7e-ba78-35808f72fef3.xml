@@ -1003,7 +1003,7 @@
       <Position>9</Position>
     </column>
     <column id="313" parent="300" name="ID">
-      <DasType>varchar(14)|0s</DasType>
+      <DasType>varchar(10)|0s</DasType>
       <Position>1</Position>
     </column>
     <column id="314" parent="300" name="Test Name">
