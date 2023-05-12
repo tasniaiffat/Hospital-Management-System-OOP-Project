@@ -1,33 +1,23 @@
-.PatientInfoLeft{
+.PathologyLeft{
     -fx-background-color: linear-gradient(to top left,#5b2fca,#3CDEC3);
     -fx-transition: all 0.3s ease-in-out;
 }
 
-.PatientInfoRight{
+.PathologyCenter{
     -fx-background-color: #e2f8fb;
 }
 
-.TextField{
-    -fx-background-color: #ffffff ;
-    -fx-border-radius: 25px;
-    -fx-background-radius: 25px;
-}
-
-.PatientInfoButton{
-    -fx-min-width: 240px;
-    -fx-max-width: 400px;
+.SelectButton{
     -fx-font-family: 'Arial';
-    -fx-font-width: bold;
     -fx-font-size: 14pt;
-    -fx-background-color: #DE5D83;
+    -fx-background-color: #5b2fca;
     -fx-text-fill: #ffffff;
     -fx-border: 0;
     -fx-background-radius: 25px;
     -fx-cursor: hand;
 }
-.PatientInfoButton:hover {
-    -fx-min-width: 240px;
-    -fx-max-width: 400px;
+
+.SelectButton:hover{
     -fx-background-color: transparent;
     -fx-text-fill: #008CBA;
     -fx-border-width: 2px;
@@ -41,7 +31,16 @@
     -fx-cursor: hand;
 }
 
-.ExistingPatientButton{
+.Label{
+    -fx-font-family: 'Arial';
+    -fx-font-size: 24pt;
+    -fx-font-weight: bold;
+    -fx-padding: 10,10,10,10;
+    -fx-font-color: #5b2fca;
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.PathologyButton{
     -fx-background-color: transparent;
     -fx-text-fill: blue;
     -fx-underline: true;
@@ -49,48 +48,12 @@
     -fx-cursor: hand;
 }
 
-.PatientInfoLabel{
-    -fx-font-size: 35pt;
-    -fx-border-width: 10000;
-    -fx-text-fill: #0b4a52;
-    -fx-font-family: 'Arial';
-    -fx-padding: 10,10,10,10;
-    -fx-font-weight: bolder;
-}
-
-.TextField{
-    -fx-font-size: 12pt;
-    -fx-font-family: 'Arial';
-    -fx-font-weight: normal;
-}
-
-.GeneralTextLabel{
-    -fx-font-size: 12pt;
-    -fx-border-width: 80;
-    -fx-text-fill: #0b4a52;
-    -fx-font-family: 'Arial';
-    -fx-padding: 10,10,10,10;
-    -fx-font-weight: normal;
-
-}
-.ErrorMessageLabel{
-    -fx-font-family: 'Arial';
-    -fx-font-size: 12pt;
-    -fx-font-weight: bold;
-    -fx-padding: 10,10,10,10;
-    -fx-background-color: rgba(0,0,0,0);
-}
-
-.PatientInfoIcon{
-    -fx-border-color: #0b4a52;
-}
-
 .LogOutButton {
     -fx-background-color: #DE5D83;
     -fx-font-family: 'Arial';
     -fx-text-fill: #fff;
     -fx-font-weight: bold;
-    -fx-font-size: 24px;
+    -fx-font-size: 20px;
     -fx-border-radius: 2px;
     -fx-background-radius: 25px;
     -fx-cursor: hand;
@@ -107,3 +70,7 @@
     -fx-border-radius: 25px;
 }
 
+.Table{
+    -fx-background-color: white;
+    -fx-background-radius: 25px;
+}

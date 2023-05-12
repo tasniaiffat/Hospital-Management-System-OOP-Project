@@ -1,5 +1,6 @@
 package Models;
 
+import Models.ClassHierarchy.Gender;
 import Models.ClassHierarchy.MedicineInterface;
 import Models.ClassHierarchy.Service;
 import javafx.event.ActionEvent;
@@ -12,10 +13,9 @@ import java.sql.ResultSet;
 import java.time.LocalDate;
 
 public class Medicine extends Service implements MedicineInterface {
-    private String medicineName;
-    private String medicineCompany;
-    private double medicinePrice;
-    private int quantityAvailable;
+
+
+    public int getQuantity(){ return quantityAvailable;}
 
     public Medicine(String ID, Patient patient, LocalDate dateOfService, String medicineName,
                     String medicineCompany, double medicinePrice, int quantityAvailable) {
@@ -34,7 +34,66 @@ public class Medicine extends Service implements MedicineInterface {
         this.quantityAvailable = quantityAvailable;
     }
 
+    public void updateQuantity(){
+        if(quantityAvailable!=0) quantityAvailable--;
+    }
+
+
+    public Medicine(String ID, String name, String Company, Double price, int quantity){
+        this.ID = ID;
+        this.medicineName = name;
+        this.medicineCompany = Company;
+        this.medicinePrice = price;
+        this.quantityAvailable = quantity;
+    }
+
+    public Medicine(String medicineID){
+        DBUtils connectNow = new DBUtils();
+        Connection connectDB = connectNow.getConnection();
+
+        String selectDoctorQuery = "SELECT * FROM hospital.DoctorInfo WHERE ID = "+"'"+medicineID+"'";
+
+
+
+        try{
+            PreparedStatement statement = connectDB.prepareStatement(selectDoctorQuery);
+//            statement.setString(1,patientID);
+            ResultSet queryOutput = statement.executeQuery(selectDoctorQuery);
+
+            if(queryOutput.next()){
+                this.ID = queryOutput.getString("ID");
+                this.medicineName = queryOutput.getString("Medicine Name");
+                this.medicineCompany = queryOutput.getString("Company");
+                this.medicinePrice = queryOutput.getDouble("Price");
+                this.quantityAvailable = queryOutput.getInt("Quantity");
+//                this.address = queryOutput.getString("Address");
+//                this.date = queryOutput.getDate("Date of Birth").toLocalDate();
+//                this.qualification = queryOutput.getString("Qualification");
+//                if(queryOutput.getString("Gender").equals("Male"))
+//                    this.gender = Gender.Male;
+//                else if(queryOutput.getString("Gender").equals("Female"))
+//                    this.gender = Gender.Female;
+
+//                ArrayList<String> patientHistory = new ArrayList<>(Arrays.asList(queryOutput.getString("MedicalHistory").split(",")));
+//                for(int i = 0; i<patientHistory.size();i++) {
+//                    patientHistory.set(i, patientHistory.get(i).trim());
+//                }
+
+                //ArrayList<String> patientCurrTreatment = new ArrayList<>(Arrays.asList(queryOutput.getString("Current Treatment").split(",")));
+//                for(int i = 0; i<patientCurrTreatment.size();i++){
+//                    patientCurrTreatment.set(i,patientCurrTreatment.get(i).trim());
+//                }
+//                this.currentTreatment = patientCurrTreatment;
+            }
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public Medicine() {}
+
+
 
     @Override
     public boolean addMedicine(Label errorMessage, ActionEvent e){
