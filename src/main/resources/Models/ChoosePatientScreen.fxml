@@ -37,7 +37,7 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="logOutButton" layoutX="597.0" layoutY="21.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" styleClass="LogOutButton" stylesheets="@../CSS/ChoosePatientScreen.css" text="Log Out">
+            <Button fx:id="logOutButton" layoutX="663.0" layoutY="21.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="33.0" styleClass="LogOutButton" stylesheets="@../CSS/ChoosePatientScreen.css" text="⏎">
                <font>
                   <Font size="11.0" />
                </font></Button>

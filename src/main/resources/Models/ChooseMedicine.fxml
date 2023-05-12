@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChooseMedicinesController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChooseMedicinesController">
     <left>
         <AnchorPane prefHeight="680.0" prefWidth="281.0" styleClass="ChoosePatientLeft" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
             <children>
@@ -21,32 +19,32 @@
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="ChoosePatientCenter" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
             <children>
-                <TableView fx:id="choosePatientTable" layoutX="25.0" layoutY="137.0" prefHeight="501.0" prefWidth="676.0" styleClass="Table" stylesheets="@../CSS/ChooseMedicine.css">
+                <TableView fx:id="chooseMedTable" layoutX="25.0" layoutY="137.0" prefHeight="501.0" prefWidth="676.0" styleClass="Table" stylesheets="@../CSS/ChooseMedicine.css">
                     <columns>
-                        <TableColumn fx:id="choosePatientID" prefWidth="196.0" text="Name" />
-                        <TableColumn fx:id="choosePatientName" prefWidth="126.0" text="Price (BDT)" />
-                        <TableColumn fx:id="choosePatientEmailAddress" prefWidth="98.0" text="Stock" />
-                        <TableColumn fx:id="choosePatientContactNo" prefWidth="253.0" text="Description" />
+                        <TableColumn fx:id="medName" prefWidth="196.0" text="Name" />
+                        <TableColumn fx:id="medPrice" prefWidth="126.0" text="Price (BDT)" />
+                        <TableColumn fx:id="medStock" prefWidth="98.0" text="Stock" />
+                        <TableColumn fx:id="medDescription" prefWidth="253.0" text="Description" />
                     </columns>
                 </TableView>
-                <TextField fx:id="choosePatientTxtField" layoutX="27.0" layoutY="64.0" prefHeight="39.0" prefWidth="289.0" promptText="Enter Keyword" styleClass="TextField" stylesheets="@../CSS/ChooseMedicine.css" text="Enter Name of Medicine" />
-                <Button fx:id="selectPatientButton" layoutX="326.0" layoutY="66.0" minWidth="103.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Select" />
+                <TextField fx:id="chooseMedTextField" layoutX="27.0" layoutY="64.0" prefHeight="39.0" prefWidth="289.0" promptText="Enter Keyword" styleClass="TextField" stylesheets="@../CSS/ChooseMedicine.css" text="Enter Name of Medicine" />
+                <Button fx:id="selectMedButton" layoutX="326.0" layoutY="66.0" minWidth="103.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Select" />
                 <Label layoutX="197.0" layoutY="636.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/ChooseMedicine.css" text="Medicine not enlisted?">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
-                <Button fx:id="newPatientButton" layoutX="359.0" layoutY="638.0" mnemonicParsing="false" styleClass="NewMedicineButton" stylesheets="@../CSS/ChooseMedicine.css" text="Add New Medicine" />
-                <Button fx:id="removePatientButton" layoutX="438.0" layoutY="66.0" minWidth="108.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Remove" />
+                <Button fx:id="addMedButton" layoutX="359.0" layoutY="638.0" mnemonicParsing="false" styleClass="NewMedicineButton" stylesheets="@../CSS/ChooseMedicine.css" text="Add New Medicine" />
+                <Button fx:id="removeMedButton" layoutX="438.0" layoutY="66.0" minWidth="108.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Remove" />
                 <Label fx:id="errorMessage" alignment="CENTER" layoutX="98.0" layoutY="102.0" prefHeight="27.0" prefWidth="524.0" text=" " textAlignment="CENTER" textFill="#f20000">
                     <font>
                         <Font name="Arial Bold" size="18.0" />
                     </font>
                 </Label>
-                <Button fx:id="logOutButton" layoutX="597.0" layoutY="21.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="Log Out">
+                <Button fx:id="logOutButton" layoutX="663.0" layoutY="21.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="33.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="⏎">
                     <font>
                         <Font size="11.0" />
                     </font></Button>
-            <Button fx:id="removePatientButton1" layoutX="555.0" layoutY="66.0" minWidth="108.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="147.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Update Stock" />
+            <Button fx:id="updateStockButton" layoutX="555.0" layoutY="66.0" minWidth="108.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="147.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Update Stock" />
             </children>
         </AnchorPane>
     </center>
