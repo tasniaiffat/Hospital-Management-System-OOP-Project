@@ -62,6 +62,18 @@ public class ReceptionScreenController implements Initializable{
             ManagementUtils.changeScence(e,"ChooseMedicine.fxml", " Choose a Medicine");
         });
 
+        appointmentButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"AppointmentScreen.fxml", " Choose a Medicine");
+        });
+
+//        newPatientButton.setOnAction( e -> {
+//            ManagementUtils.changeScence(e,"PatientInfo.fxml", " Choose a Medicine");
+//        });
+
+        billingButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"PatientInfo.fxml", " Choose a Medicine");
+        });
+
         labTestButton.setOnAction( e -> {
             ManagementUtils.changeScence(e, "Pathology.fxml", " Choose a Lab Test");
         });
