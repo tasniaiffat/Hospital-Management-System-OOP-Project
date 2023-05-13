@@ -117,7 +117,7 @@ public class AppointmentScreenController implements Initializable {
 
             chooseDoctorID.setCellValueFactory(new PropertyValueFactory<>("ID"));
             chooseDoctorName.setCellValueFactory(new PropertyValueFactory<>("name"));
-            chooseDoctorSpeciality.setCellValueFactory(new PropertyValueFactory<>("emailAddress"));
+            chooseDoctorSpeciality.setCellValueFactory(new PropertyValueFactory<>("speciality"));
             chooseDoctorContactNo.setCellValueFactory(new PropertyValueFactory<>("contactNo"));
 
             chooseDoctorTable.setItems(DoctorList);

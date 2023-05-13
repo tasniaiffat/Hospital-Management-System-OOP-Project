@@ -52,11 +52,11 @@ public class LabtestScreenController implements Initializable {
         });
 
         returnButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"WelcomeScreen.fxml","Hello!");
+            ManagementUtils.changeScence(e,"Pathology.fxml","Hello!");
         });
-        backButton.setOnAction(( e -> {
-            ManagementUtils.changeScence(e,"Pathology.fxml","Choose a test");
-        }));
+//        backButton.setOnAction(( e -> {
+//            ManagementUtils.changeScence(e,"Pathology.fxml","Choose a test");
+//        }));
     }
 
 
