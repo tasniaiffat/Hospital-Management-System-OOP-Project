@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SignUpController implements Initializable {
+public class SignUpScreenController implements Initializable {
 
 
 
@@ -38,11 +38,12 @@ public class SignUpController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         logInScreenButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"LoginScreen.fxml","Login");
+            ManagementUtils.changeScence(e,"LogInScreen.fxml","Login");
         });
 
         signUpButton.setOnAction( e -> {
             successfulSignUp = receptionist.signUp(signUpEmail,signUpPass,signUpConfirmPass,errorMessage);
+            ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Reception");
         });
     }
 }

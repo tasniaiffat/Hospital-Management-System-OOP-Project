@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" styleClass="PatientInfoRight" stylesheets="@../CSS/PatientInfoScreen.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DoctorInfoController">
+    <left>
+        <AnchorPane prefHeight="680.0" prefWidth="281.0" styleClass="PatientInfoLeft" stylesheets="@../CSS/PatientInfoScreen.css" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="198.0" fitWidth="190.0" layoutX="46.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Assets/Doctor.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="400.0" prefWidth="403.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="68.0" fitWidth="52.0" layoutX="327.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Assets/signUpIcon.png" />
+                    </image></ImageView>
+                <CheckBox fx:id="newDoctorIsMale" layoutX="482.0" layoutY="321.0" mnemonicParsing="false" onAction="#handleMaleBox" stylesheets="@../CSS/PatientInfoScreen.css" text="Male" textFill="#0b4a52">
+                    <font>
+                        <Font name="Arial" size="16.0" />
+                    </font>
+                </CheckBox>
+                <DatePicker fx:id="newDoctorDob" layoutX="379.0" layoutY="195.0" prefHeight="38.0" prefWidth="297.0" promptText="Date of Birth" styleClass="TextField" stylesheets="@../CSS/PatientInfoScreen.css" />
+                <TextField fx:id="newDoctorName" layoutX="48.0" layoutY="195.0" prefHeight="38.0" prefWidth="297.0" promptText="Name" styleClass="TextField" stylesheets="@../CSS/PatientInfoScreen.css" />
+                <TextField fx:id="newDoctorContact" layoutX="48.0" layoutY="249.0" prefHeight="38.0" prefWidth="297.0" promptText="Contact Number" styleClass="TextField" stylesheets="@../CSS/PatientInfoScreen.css" />
+                <TextField fx:id="newDoctorAddress" layoutX="379.0" layoutY="249.0" prefHeight="38.0" prefWidth="297.0" promptText="Address" styleClass="TextField" stylesheets="@../CSS/PatientInfoScreen.css" />
+                <TextField fx:id="newDoctorEmail" layoutX="48.0" layoutY="313.0" prefHeight="38.0" prefWidth="297.0" promptText="Email" styleClass="TextField" stylesheets="@../CSS/PatientInfoScreen.css" />
+                <CheckBox fx:id="newDoctorIsFemale" layoutX="589.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleFemaleBox" stylesheets="@../CSS/PatientInfoScreen.css" text="Female" textFill="#0b4a52">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </CheckBox>
+                <Text fill="#0b4a52" layoutX="375.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="GeneralTextLabel" text="Gender:" wrappingWidth="71.21875" />
+                <Button fx:id="addDoctorButton" layoutX="212.0" layoutY="494.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="PatientInfoButton" stylesheets="@../CSS/PatientInfoScreen.css" text="Add Doctor" />
+                <Label fx:id="newPatientLabel" layoutX="213.0" layoutY="79.0" styleClass="PatientInfoLabel" stylesheets="@../CSS/PatientInfoScreen.css" text="New Doctor" />
+                <Label fx:id="errorMessage" layoutX="209.0" layoutY="513.0" prefHeight="40.0" prefWidth="332.0" styleClass="ErrorMessageLabel" stylesheets="@../CSS/PatientInfoScreen.css" textFill="#f20000">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </Label>
+<!--                <Label fx:id="errorMessage" layoutX="303.0" layoutY="529.0" prefHeight="21.0" prefWidth="14.0">-->
+<!--                    <font>-->
+<!--                        <Font name="Arial Bold" size="18.0" />-->
+<!--                    </font>-->
+<!--                </Label>-->
+                <TextField fx:id="Specialbox" layoutX="48.0" layoutY="382.0" prefHeight="38.0" prefWidth="297.0" promptText="Specilaity" styleClass="TextField" stylesheets="@../CSS/PatientInfoScreen.css" />
+                <Button fx:id="backbutton" layoutX="212.0" layoutY="542.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="PatientInfoButton" stylesheets="@../CSS/PatientInfoScreen.css" text="Back" />
+                <TextField fx:id="DoctorQualification" layoutX="379.0" layoutY="382.0" prefHeight="38.0" prefWidth="297.0" promptText="Qualification" styleClass="TextField" stylesheets="@../CSS/PatientInfoScreen.css" />
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

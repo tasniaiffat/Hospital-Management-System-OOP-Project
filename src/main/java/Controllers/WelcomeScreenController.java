@@ -26,7 +26,7 @@ public class WelcomeScreenController implements Initializable {
         });
 
         loginScreenButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"LoginScreen.fxml","Login");
+            ManagementUtils.changeScence(e,"LogInScreen.fxml","Login");
         });
     }
 

@@ -1,6 +1,6 @@
 package Models;
 
-import Controllers.ChoosePatientController;
+import Controllers.ChoosePatientScreenController;
 import Models.ClassHierarchy.Gender;
 import Models.ClassHierarchy.PatientInterface;
 import Models.ClassHierarchy.Person;
@@ -12,7 +12,6 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -53,7 +52,6 @@ public class Patient extends Person implements PatientInterface {
 
         try{
             PreparedStatement statement = connectDB.prepareStatement(selectPatientQuery);
-//            statement.setString(1,patientID);
             ResultSet queryOutput = statement.executeQuery(selectPatientQuery);
 
            if(queryOutput.next()){
@@ -82,9 +80,11 @@ public class Patient extends Person implements PatientInterface {
            }
 
         } catch (Exception e){
-            Logger.getLogger(ChoosePatientController.class.getName()).log(Level.SEVERE,null, e);
+            Logger.getLogger(ChoosePatientScreenController.class.getName()).log(Level.SEVERE,null, e);
         }
     }
+
+
 
     public List<String> getMedicalHistory() {
         return medicalHistory;
@@ -101,6 +101,9 @@ public class Patient extends Person implements PatientInterface {
     public void setCurrentTreatment(List<String> currentTreatment) {
         this.currentTreatment = currentTreatment;
     }
+
+
+
 
     public String generateID(){
         DBUtils connectNow = new DBUtils();
@@ -163,8 +166,8 @@ public class Patient extends Person implements PatientInterface {
             int status = statement.executeUpdate();
 
             if(status==1){
-//                errorMessage.setTextFill(Color.web("#61cb34"));
-//                errorMessage.setText("Patient Added!");
+                errorMessage.setTextFill(Color.web("#61cb34"));
+                errorMessage.setText("Patient Added!");
                 successfulAdd = true;
                 ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
             }

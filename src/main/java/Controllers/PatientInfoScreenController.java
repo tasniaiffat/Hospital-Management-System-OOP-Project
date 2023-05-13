@@ -19,8 +19,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-public class PatientInfoController implements Initializable {
+public class PatientInfoScreenController implements Initializable {
 
+    @FXML
+    private Button backButton;
     @FXML
     private Button addPatientButton;
 
@@ -55,9 +57,11 @@ public class PatientInfoController implements Initializable {
     private TextArea newPatientMedHistory;
     @FXML
     private TextArea newPatientCurrentTreatment;
-
     @FXML
     private TextField newPatientName;
+
+
+
     public void handleMaleBox(ActionEvent event){
         if(newPatientIsMale.isSelected()) {
             newPatientIsFemale.setSelected(false);
@@ -103,10 +107,14 @@ public class PatientInfoController implements Initializable {
             boolean successfulAdd = patient.addPatient(e,errorMessage);
 
             if(successfulAdd){
-                ChoosePatientController.chosenID = patient.getID();
+                ChoosePatientScreenController.chosenID = patient.getID();
                 ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             }
 
+        });
+
+        backButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Choose a Patient");
         });
     }
 }

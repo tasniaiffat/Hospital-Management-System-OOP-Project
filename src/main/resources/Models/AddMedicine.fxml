@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" styleClass="PatientInfoRight" stylesheets="@../CSS/PatientInfoScreen.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddMedicineController">
+    <left>
+        <AnchorPane prefHeight="680.0" prefWidth="281.0" styleClass="PatientInfoLeft" stylesheets="@../CSS/AddMedicineScreen.css" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="198.0" fitWidth="190.0" layoutX="46.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Assets/newMedicine.png.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane fx:id="newcompany" prefHeight="400.0" prefWidth="403.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="newMedName" layoutX="42.0" layoutY="269.0" prefHeight="38.0" prefWidth="297.0" promptText="Name of Medicine" styleClass="TextField" stylesheets="@../CSS/AddMedicineScreen.css" />
+                <TextField fx:id="newMedPrice" layoutX="42.0" layoutY="323.0" prefHeight="38.0" prefWidth="297.0" promptText="Price in BDT" styleClass="TextField" stylesheets="@../CSS/AddMedicineScreen.css" />
+                <TextField fx:id="newMedStock" layoutX="387.0" layoutY="269.0" prefHeight="38.0" prefWidth="297.0" promptText="Stock" styleClass="TextField" stylesheets="@../CSS/AddMedicineScreen.css" />
+                <Button fx:id="addMedicineButton" layoutX="210.0" layoutY="456.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="PatientInfoButton" stylesheets="@../CSS/PatientInfoScreen.css" text="Add Medicine">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font></Button>
+                <Label fx:id="newMedLabel" layoutX="177.0" layoutY="162.0" styleClass="PatientInfoLabel" stylesheets="@../CSS/PatientInfoScreen.css" text=" New Inventory" />
+                <Label fx:id="errorMessage" layoutX="195.0" layoutY="515.0" prefHeight="40.0" prefWidth="332.0" styleClass="ErrorMessageLabel" stylesheets="@../CSS/PatientInfoScreen.css" textFill="#f20000">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Button fx:id="returnButton" layoutX="644.0" layoutY="32.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="45.0" styleClass="LogOutButton" stylesheets="@../CSS/AddMedicineScreen.css" text="⏎" />
+            <TextField fx:id="newmedcompany" layoutX="387.0" layoutY="323.0" prefHeight="38.0" prefWidth="297.0" promptText="Company" styleClass="TextField" stylesheets="@../CSS/AddMedicineScreen.css" />
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
