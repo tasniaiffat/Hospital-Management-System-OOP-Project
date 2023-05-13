@@ -70,10 +70,11 @@ public class AppointmentScreenController implements Initializable {
             if (selectedDoctor != null) {
                 String ID = selectedDoctor.getID();
                 chosenID = ID;
+                errorMessage.setText("Appointment Made");
                 ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             }
             else{
-                errorMessage.setText("Patient Not Selected");
+                errorMessage.setText("Doctor Not Selected");
             }
         });
 

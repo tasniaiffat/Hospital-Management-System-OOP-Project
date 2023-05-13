@@ -108,7 +108,7 @@ public class PathologyController implements Initializable {
         });
 
         logOutButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e, "WelcomeScreen.fxml","Hello!");
+            ManagementUtils.changeScence(e, "ReceptionScreen.fxml","Hello!");
         });
 
 
