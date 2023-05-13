@@ -1,0 +1,92 @@
+.BillingCenter{
+    -fx-background-color: #e2f8fb;
+}
+
+.BillingLeft{
+    -fx-background-color: linear-gradient(to top left,#5b2fca,#3CDEC3);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.Button{
+    -fx-font-family: 'Arial';
+    -fx-font-size: 18pt;
+    -fx-background-color: #008CBA;
+    -fx-text-fill: #ffffff;
+    -fx-border: 0;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+}
+
+.Button:hover {
+    -fx-background-color: transparent;
+    -fx-text-fill: #008CBA;
+    -fx-border-width: 2px;
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 25px;
+    -fx-font-weight: bolder;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14pt;
+    -fx-border: 0;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+}
+
+.HeadingLabel{
+    -fx-font-size: 35pt;
+    -fx-border-width: 10000;
+    -fx-text-fill: #0b4a52;
+    -fx-font-family: 'Arial';
+    -fx-padding: 10,10,10,10;
+    -fx-font-weight: bolder;
+}
+
+.GeneralTextLabel{
+    -fx-font-size: 12pt;
+    -fx-border-width: 80;
+    -fx-text-fill: #0b4a52;
+    -fx-font-family: 'Arial';
+    -fx-padding: 10,10,10,10;
+    -fx-font-weight: normal;
+
+}
+
+.LogOutButton {
+    -fx-background-color: #DE5D83;
+    -fx-font-family: 'Arial';
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+    -fx-padding: 4;
+}
+
+.LogOutButton:hover {
+    -fx-background-color: transparent;
+    -fx-background-radius: 25px;
+    -fx-text-fill: #008CBA;
+    -fx-border-width: 2px;
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 25px;
+}
+
+.AmountLabel{
+    -fx-font-size: 35pt;
+    -fx-border-width: 10000;
+    -fx-text-fill: #61cb34;
+    -fx-font-family: 'Arial';
+    -fx-padding: 10,10,10,10;
+    -fx-font-weight: bolder;
+}
+.PaymentStatusLabel{
+    -fx-font-size: 15pt;
+    -fx-border-width: 80;
+    -fx-text-fill: #e40707;
+    -fx-font-family: 'Arial';
+    -fx-padding: 10,10,10,10;
+    -fx-font-weight: bolder;
+}
+
+

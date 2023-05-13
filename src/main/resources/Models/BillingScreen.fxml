@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="680.0" prefWidth="1000.0" styleClass="BillingCenter" stylesheets="@../CSS/BillingScreen.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BillingScreenController">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="281.0" styleClass="BillingLeft" stylesheets="@../CSS/BillingScreen.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="298.0" fitWidth="270.0" layoutX="6.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Billing.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="backButton" layoutX="20.0" layoutY="41.0" mnemonicParsing="false" styleClass="Button" stylesheets="@../CSS/BillingScreen.css" text="Go Back" />
+            <Button fx:id="logOutButton" layoutX="620.0" layoutY="42.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="42.0" styleClass="LogOutButton" stylesheets="@../CSS/BillingScreen.css" text="⏎" />
+            <Label layoutX="161.0" layoutY="96.0" styleClass="HeadingLabel" stylesheets="@../CSS/BillingScreen.css" text="Billing Dashboard" />
+            <Label layoutX="37.0" layoutY="193.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" text="Patient ID" />
+            <Label layoutX="37.0" layoutY="245.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" text="Name:" />
+            <Label layoutX="344.0" layoutY="190.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" text="Contact No" />
+            <Label layoutX="344.0" layoutY="242.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" text="Email Address" />
+            <Line endX="100.0" endY="-44.0" layoutX="243.0" layoutY="338.0" startX="100.0" startY="-163.0" />
+            <Label fx:id="idLabel" layoutX="129.0" layoutY="196.0" prefHeight="40.0" prefWidth="201.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" />
+            <Label fx:id="nameLabel" layoutX="129.0" layoutY="245.0" prefHeight="40.0" prefWidth="205.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" />
+            <Label fx:id="contactNoLabel" layoutX="467.0" layoutY="190.0" prefHeight="40.0" prefWidth="232.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" />
+            <Label fx:id="emailLabel" layoutX="465.0" layoutY="242.0" prefHeight="40.0" prefWidth="251.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" />
+            <Label layoutX="36.0" layoutY="316.0" styleClass="HeadingLabel" stylesheets="@../CSS/BillingScreen.css" text="Total Bill" />
+            <Label fx:id="totalamountLabel" layoutX="361.0" layoutY="323.0" prefHeight="74.0" prefWidth="269.0" styleClass="AmountLabel" stylesheets="@../CSS/BillingScreen.css" text="0.00 ৳" />
+            <Label layoutX="42.0" layoutY="400.0" prefHeight="40.0" prefWidth="113.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" text="Amount Paid" />
+            <Label layoutX="39.0" layoutY="450.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" text="Change" />
+            <Button fx:id="confirmPaymentButton" layoutX="254.0" layoutY="555.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="250.0" styleClass="Button" stylesheets="@../CSS/BillingScreen.css" text="Confirm Payment" />
+            <Label layoutX="40.0" layoutY="497.0" prefHeight="40.0" prefWidth="138.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" text="Payment Status" />
+            <Label fx:id="paymentStatusLabel" layoutX="350.0" layoutY="503.0" styleClass="PaymentStatusLabel" stylesheets="@../CSS/BillingScreen.css" text="Due" />
+            <Label fx:id="changesLabel" layoutX="345.0" layoutY="464.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" text="0.00 ৳" />
+            <TextField fx:id="amountPaidField" layoutX="350.0" layoutY="407.0" prefHeight="38.0" prefWidth="297.0" styleClass="TextField" stylesheets="@../CSS/AddMedicineScreen.css" />
+            <Label fx:id="errorMessageLabel" layoutX="233.0" layoutY="621.0" prefHeight="40.0" prefWidth="277.0" styleClass="GeneralTextLabel" stylesheets="@../CSS/BillingScreen.css" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
