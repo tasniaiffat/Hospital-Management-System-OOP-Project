@@ -54,7 +54,7 @@ public class ChoosePatientScreenController implements Initializable {
     @FXML
     private Button newPatientButton;
     @FXML
-    private Button logOutButton;
+    private Button backButton;
 
     ObservableList<Patient> patientList = FXCollections.observableArrayList();
 
@@ -88,8 +88,13 @@ public class ChoosePatientScreenController implements Initializable {
             ManagementUtils.changeScence(e,"PatientInfoScreen.fxml","Add new patient");
         });
 
+
+        backButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Hello!");
+
         logOutButton.setOnAction( e -> {
             ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Hello!");
+
         });
 
     }

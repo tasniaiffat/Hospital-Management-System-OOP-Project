@@ -40,7 +40,7 @@ public class PathologyController implements Initializable {
     @FXML
     private Button removeButton;
     @FXML
-    private Button logOutButton;
+    private Button backButton;
 
     @FXML
     private Button PathologyConfirmButton;
@@ -48,6 +48,8 @@ public class PathologyController implements Initializable {
     @FXML
     private Label errorMessage;
     ObservableList<Pathology> testList = FXCollections.observableArrayList();
+
+    public static String chosenID  = null;
 
 
     public void searchPathology(){
@@ -89,9 +91,9 @@ public class PathologyController implements Initializable {
 
         searchPathology();
 
-        selectButton.setOnAction( e -> {
-            // Add to cart and update bill
-        });
+//        selectButton.setOnAction( e -> {
+//            // Add to cart and update bill
+//        });
         removeButton.setOnAction(( e -> {
             Pathology selectedtest = PathologyTable.getSelectionModel().getSelectedItem();
             if (selectedtest != null) {
@@ -100,15 +102,16 @@ public class PathologyController implements Initializable {
         }));
 
         PathologyConfirmButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
+
+        // Add to cart and update billing
         });
 
         addButton.setOnAction( e -> {
             ManagementUtils.changeScence(e,"AddPathology.fxml","Add a Labtest");
         });
 
-        logOutButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e, "ReceptionScreen.fxml","Hello!");
+        backButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e, "ReceptionScreen.fxml","Reception");
         });
 
 

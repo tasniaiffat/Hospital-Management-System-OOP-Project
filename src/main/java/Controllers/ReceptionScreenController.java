@@ -46,6 +46,8 @@ public class ReceptionScreenController implements Initializable{
 
     Patient patient = new Patient(ID);
 
+    //Billing bill = new Billing(0);
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -71,7 +73,7 @@ public class ReceptionScreenController implements Initializable{
 //        });
 
         billingButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"PatientInfo.fxml", " Choose a Medicine");
+            ManagementUtils.changeScence(e,"PatientInfoScreen.fxml", " Choose a Medicine");
         });
 
         labTestButton.setOnAction( e -> {

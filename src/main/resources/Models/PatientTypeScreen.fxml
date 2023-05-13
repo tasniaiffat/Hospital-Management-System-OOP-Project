@@ -11,8 +11,8 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="PatientTypeCenter" stylesheets="@../CSS/PatientTypeScreen.css" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="newPatientButton" layoutX="248.0" layoutY="428.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="273.0" styleClass="PatientTypeButton" stylesheets="@../CSS/PatientTypeScreen.css" text="New Patient" />
-            <Button fx:id="existingPatientButton" layoutX="248.0" layoutY="518.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="273.0" styleClass="PatientTypeButton" stylesheets="@../CSS/PatientTypeScreen.css" text="Existing Patient" />
+            <Button fx:id="newPatientButton" layoutX="248.0" layoutY="395.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="273.0" styleClass="PatientTypeButton" stylesheets="@../CSS/PatientTypeScreen.css" text="New Patient" />
+            <Button fx:id="existingPatientButton" layoutX="248.0" layoutY="463.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="273.0" styleClass="PatientTypeButton" stylesheets="@../CSS/PatientTypeScreen.css" text="Existing Patient" />
             <ImageView fx:id="patientTypeImage" fitHeight="184.0" fitWidth="174.0" layoutX="297.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true" styleClass="PatientTypeIcon">
                <image>
                   <Image url="@../Assets/Patient.png" />
@@ -20,6 +20,7 @@
             </ImageView>
             <Label fx:id="patientTypeLabel" layoutX="160.0" layoutY="319.0" styleClass="PatientTypeLabel" stylesheets="@../CSS/PatientTypeScreen.css" text="Select Patient Type" />
             <Button fx:id="logOutButton" layoutX="570.0" layoutY="35.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="124.0" styleClass="LogOutButton" stylesheets="@../CSS/ReceptionScreen.css" text="Log Out" />
+            <Button fx:id="addMedicineButton" layoutX="248.0" layoutY="533.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="273.0" styleClass="PatientTypeButton" stylesheets="@../CSS/PatientTypeScreen.css" text="Add Medicine" />
          </children>
       </AnchorPane>
    </center>

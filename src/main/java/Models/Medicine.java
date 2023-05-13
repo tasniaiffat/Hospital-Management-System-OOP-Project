@@ -14,6 +14,18 @@ import java.time.LocalDate;
 
 public class Medicine extends Service implements MedicineInterface {
 
+    private String medicineName;
+    private String medicineCompany;
+    private double medicinePrice;
+    protected int quantityAvailable;
+    public void setMedicineName(String name){this.medicineName = name;}
+    public String getMedicineName(){return medicineName;}
+    public void setMedicineCompany(String company){ this.medicineCompany = company;}
+    public String getMedicineCompany(){return this.medicineCompany;}
+    public double getMedicinePrice(){return medicinePrice;}
+    public void setMedicinePrice(double price){this.medicinePrice = price;}
+    public void setQuantityAvailable(int ava){this.quantityAvailable = ava;}
+    public int getQuantityAvailable(){return this.quantityAvailable;}
 
     public int getQuantity(){ return quantityAvailable;}
 
@@ -47,11 +59,20 @@ public class Medicine extends Service implements MedicineInterface {
         this.quantityAvailable = quantity;
     }
 
+    @Override
+    public boolean provideService() {
+
+        return super.provideService();
+    }
+//    public boolean provideService(Billing bill){
+//        bill.updateBill();
+//    }
+
     public Medicine(String medicineID){
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
 
-        String selectDoctorQuery = "SELECT * FROM hospital.DoctorInfo WHERE ID = "+"'"+medicineID+"'";
+        String selectDoctorQuery = "SELECT * FROM hospital.medicineinfo WHERE ID = "+"'"+medicineID+"'";
 
 
 

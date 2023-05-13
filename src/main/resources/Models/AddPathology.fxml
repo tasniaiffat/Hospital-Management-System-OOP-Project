@@ -22,8 +22,13 @@
             <children>
                 <TextField fx:id="newTestName" layoutX="42.0" layoutY="269.0" prefHeight="38.0" prefWidth="297.0" promptText="Name of Test" styleClass="TextField" stylesheets="@../CSS/AddMedicineScreen.css" />
                 <TextField fx:id="newTestPrice" layoutX="42.0" layoutY="323.0" prefHeight="38.0" prefWidth="297.0" promptText="Price in BDT" styleClass="TextField" stylesheets="@../CSS/AddMedicineScreen.css" />
+
+                <TextField fx:id="newTestDesciption" layoutX="387.0" layoutY="269.0" prefHeight="71.0" prefWidth="297.0" promptText="Description" styleClass="TextField" stylesheets="@../CSS/AddMedicineScreen.css" />
+                <Button fx:id="addPathologyButton" layoutX="203.0" layoutY="477.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="PatientInfoButton" stylesheets="@../CSS/PatientInfoScreen.css" text="Add Pathology">
+
                 <TextField fx:id="newTestDesciption" layoutX="387.0" layoutY="269.0" prefHeight="93.0" prefWidth="297.0" promptText="Description" styleClass="TextField" stylesheets="@../CSS/AddMedicineScreen.css" />
                 <Button fx:id="addPathologyButton" layoutX="211.0" layoutY="454.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="PatientInfoButton" stylesheets="@../CSS/PatientInfoScreen.css" text="Add Pathology">
+
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font></Button>
@@ -33,12 +38,7 @@
                         <Font name="Arial Bold" size="18.0" />
                     </font>
                 </Label>
-                <Button fx:id="returnButton" layoutX="647.0" layoutY="32.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="42.0" styleClass="LogOutButton" stylesheets="@../CSS/AddMedicineScreen.css" text="⏎" />
-            <Button fx:id="backButton" layoutX="211.0" layoutY="509.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="PatientInfoButton" stylesheets="@../CSS/PatientInfoScreen.css" text="Back">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
+                <Button fx:id="returnButton" layoutX="587.0" layoutY="32.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="102.0" styleClass="LogOutButton" stylesheets="@../CSS/AddMedicineScreen.css" text="Back" />
             </children>
         </AnchorPane>
     </center>

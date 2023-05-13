@@ -6,6 +6,7 @@ import Models.ClassHierarchy.PatientInterface;
 import Models.ClassHierarchy.Person;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -165,8 +166,8 @@ public class Patient extends Person implements PatientInterface {
             int status = statement.executeUpdate();
 
             if(status==1){
-//                errorMessage.setTextFill(Color.web("#61cb34"));
-//                errorMessage.setText("Patient Added!");
+                errorMessage.setTextFill(Color.web("#61cb34"));
+                errorMessage.setText("Patient Added!");
                 successfulAdd = true;
             }
             else{
