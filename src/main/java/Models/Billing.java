@@ -31,6 +31,10 @@ public class Billing extends Service{
         return billingAmount;
     }
 
+    public void increaseBillingAmount(double billingAmount) {
+        this.billingAmount+=billingAmount;
+    }
+
     public void setBillingAmount(double newamount) {
         this.billingAmount = billingAmount+=newamount;
     }

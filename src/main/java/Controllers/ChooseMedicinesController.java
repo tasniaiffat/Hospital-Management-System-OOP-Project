@@ -82,7 +82,7 @@ public class ChooseMedicinesController implements Initializable {
 
             chooseMedTable.setItems(medList);
 
-            //filterList();
+            filterList();
 
 
         } catch (Exception e){
@@ -90,34 +90,34 @@ public class ChooseMedicinesController implements Initializable {
         }
     }
 
-//    public void filterList(){
-//        FilteredList<Medicine> filteredList = new FilteredList<>(medList, b -> true);
-//
-//        chooseMedTextField.textProperty().addListener( (observable, oldValue, newValue) -> {
-//            filteredList.setPredicate( Patient -> {
-//                if(newValue.isEmpty() || newValue.isBlank() || newValue==null){
-//                    return true;
-//                }
-//
-//                String searchKeyword = newValue.toLowerCase();
-//
-//                if(Medicine.getName().toLowerCase().contains(searchKeyword)){
-//                    return true;
-//                } else if(Medicine.getID().toLowerCase().contains(searchKeyword)){
-//                    return true;
-//                } else if(Medicine.getCompany().toLowerCase().contains(searchKeyword)){
-//                    return true;
-//                } else return false;
-//
-//            });
-//        });
-//
-//        SortedList<Medicine> sortedList = new SortedList<>(filteredList);
-//        sortedList.comparatorProperty().bind(chooseMedTable.comparatorProperty());
-//
-//        chooseMedTable.setItems(medList);
-//
-//    }
+    public void filterList(){
+        FilteredList<Medicine> filteredList = new FilteredList<>(medList, b -> true);
+
+        chooseMedTextField.textProperty().addListener( (observable, oldValue, newValue) -> {
+            filteredList.setPredicate( Medicine -> {
+                if(newValue.isEmpty() || newValue.isBlank() || newValue==null){
+                    return true;
+                }
+
+                String searchKeyword = newValue.toLowerCase();
+
+                if(Medicine.getMedicineName().toLowerCase().contains(searchKeyword)){
+                    return true;
+                } else if(Medicine.getID().toLowerCase().contains(searchKeyword)){
+                    return true;
+                } else if(Medicine.getMedicineCompany().toLowerCase().contains(searchKeyword)){
+                    return true;
+                } else return false;
+
+            });
+        });
+
+        SortedList<Medicine> sortedList = new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(chooseMedTable.comparatorProperty());
+
+        chooseMedTable.setItems(medList);
+
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         searchMedicine();
@@ -129,7 +129,6 @@ public class ChooseMedicinesController implements Initializable {
                 chosenID = ID;
                 if(selectedMed.getQuantity()>0){
                     selectedMed.updateQuantity();
-                    //update billing
                     boolean provided = selectedMed.provideService();
                     if(!provided){
                         errorMessage.setText("Service could not be provided");

@@ -3,12 +3,11 @@ package Controllers;
 import Models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -36,9 +35,8 @@ public class PathologyController implements Initializable {
     @FXML
     private Button selectButton;
     @FXML
-    private Button addButton;
-    @FXML
-    private Button removeButton;
+    private TextField chooseLabTestTxtField;
+
     @FXML
     private Button backButton;
 
@@ -79,33 +77,65 @@ public class PathologyController implements Initializable {
 
             PathologyTable.setItems(testList);
 
-            //filterList();
+            filterList();
 
 
         } catch (Exception e){
             Logger.getLogger(ChoosePatientScreenController.class.getName()).log(Level.SEVERE,null, e);
         }
     }
+
+    public void filterList(){
+        FilteredList<Pathology> filteredList = new FilteredList<>(testList, b -> true);
+
+        chooseLabTestTxtField.textProperty().addListener( (observable, oldValue, newValue) -> {
+            filteredList.setPredicate( Pathology -> {
+                if(newValue.isEmpty() || newValue.isBlank() || newValue==null){
+                    return true;
+                }
+
+                String searchKeyword = newValue.toLowerCase();
+
+                if(Pathology.getTestName().toLowerCase().contains(searchKeyword)){
+                    return true;
+                } else if(Pathology.getID().toLowerCase().contains(searchKeyword)){
+                    return true;
+                } else if(Pathology.getTestDescription().toLowerCase().contains(searchKeyword)){
+                    return true;
+                } else return false;
+
+            });
+        });
+
+        SortedList<Pathology> sortedList = new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(PathologyTable.comparatorProperty());
+
+        PathologyTable.setItems(testList);
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         searchPathology();
 
-//        selectButton.setOnAction( e -> {
-//            // Add to cart and update bill
-//        });
-//        removeButton.setOnAction(( e -> {
-//            Pathology selectedtest = PathologyTable.getSelectionModel().getSelectedItem();
-//            if (selectedtest != null) {
-//                selectedtest.removePathology(errorMessage,e);
-//            }
-//            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Choose Lab Test");
-//        }));
-
-        PathologyConfirmButton.setOnAction( e -> {
-
-        // Add to cart and update billing
+        selectButton.setOnAction( e -> {
+            Pathology selectedtest = PathologyTable.getSelectionModel().getSelectedItem();
+            if (selectedtest != null) {
+                String ID = selectedtest.getID();
+                chosenID = ID;
+                if(selectedtest!=null){
+                    boolean provided = selectedtest.provideService();
+                    if(!provided){
+                        errorMessage.setText("Service could not be provided");
+                    }
+                }
+            }
+            else{
+                errorMessage.setText("Medicine Not Selected");
+            }
         });
+
 
 
         backButton.setOnAction( e -> {

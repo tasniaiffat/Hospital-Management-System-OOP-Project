@@ -2,6 +2,7 @@ package Models;
 
 import Models.ClassHierarchy.Gender;
 import Models.ClassHierarchy.MedicineInterface;
+import Models.ClassHierarchy.PaymentStatus;
 import Models.ClassHierarchy.Service;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
@@ -11,6 +12,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
+
+import static Controllers.BillingScreenController.bill;
 
 public class Medicine extends Service implements MedicineInterface {
 
@@ -59,14 +62,17 @@ public class Medicine extends Service implements MedicineInterface {
         this.quantityAvailable = quantity;
     }
 
+    public boolean buyMedicine(){
+        bill.increaseBillingAmount(this.medicinePrice);
+        bill.setPaymentStatus(PaymentStatus.Due);
+        return true;
+    }
+
     @Override
     public boolean provideService() {
-
-        return super.provideService();
+        buyMedicine();
+        return true;
     }
-//    public boolean provideService(Billing bill){
-//        bill.updateBill();
-//    }
 
     public Medicine(String medicineID){
         DBUtils connectNow = new DBUtils();

@@ -36,7 +36,7 @@
                         <Font name="Arial Bold" size="18.0" />
                     </font>
                 </Label>
-                <Button fx:id="returnButton" layoutX="587.0" layoutY="32.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="102.0" styleClass="LogOutButton" stylesheets="@../CSS/AddMedicineScreen.css" text="Back" />
+                <Button fx:id="returnButton" layoutX="645.0" layoutY="32.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="44.0" styleClass="LogOutButton" stylesheets="@../CSS/AddMedicineScreen.css" text="⏎" />
             </children>
         </AnchorPane>
     </center>

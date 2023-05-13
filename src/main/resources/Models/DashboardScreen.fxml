@@ -39,12 +39,12 @@
             <Button fx:id="logOutButton" layoutX="644.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="40.0" styleClass="LogOutButton" stylesheets="@../CSS/DashboardScreen.css" text="⏎" />
             <TableView fx:id="historyTableView" layoutX="47.0" layoutY="446.0" prefHeight="200.0" prefWidth="305.0">
               <columns>
-                <TableColumn fx:id="historyTableColumn" prefWidth="304.0" text="Medical History" />
+                <TableColumn fx:id="historyTableColumn" prefWidth="304.0" text="Ongoing Treatments" />
               </columns>
             </TableView>
             <TableView fx:id="currTreatmentTableView" layoutX="397.0" layoutY="446.0" prefHeight="200.0" prefWidth="305.0">
               <columns>
-                <TableColumn fx:id="currTreatmentTableColumn" prefWidth="304.0" text="Ongoing Treatments" />
+                <TableColumn fx:id="currTreatmentTableColumn" prefWidth="304.0" text="Medical History" />
               </columns>
             </TableView>
          </children>

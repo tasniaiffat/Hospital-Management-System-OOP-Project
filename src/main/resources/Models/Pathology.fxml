@@ -19,7 +19,7 @@
     <center>
         <AnchorPane fx:id="BackButton" prefHeight="200.0" prefWidth="200.0" styleClass="ChoosePatientCenter" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
             <children>
-                <TableView fx:id="PathologyTable" layoutX="40.0" layoutY="90.0" prefHeight="548.0" prefWidth="592.0" styleClass="Table" stylesheets="@../CSS/Pathology.css">
+                <TableView fx:id="PathologyTable" layoutX="40.0" layoutY="138.0" prefHeight="500.0" prefWidth="631.0" styleClass="Table" stylesheets="@../CSS/Pathology.css">
                     <columns>
                         <TableColumn fx:id="TestID" prefWidth="80.0" text="ID" />
                         <TableColumn fx:id="TestName" prefWidth="209.0000228881836" text="Lab Test Name" />
@@ -28,11 +28,11 @@
                         <TableColumn fx:id="Testdescription" prefWidth="180.66665649414062" text="Description" />
                     </columns>
                 </TableView>
-                <Button fx:id="backButton" layoutX="561.0" layoutY="33.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="100.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="Back">
+                <Button fx:id="backButton" layoutX="615.0" layoutY="19.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="42.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="⏎">
                     <font>
                         <Font size="11.0" />
                     </font></Button>
-            <Button fx:id="PathologyConfirmButton" layoutX="522.0" layoutY="595.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="145.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="Confirm">
+            <Button fx:id="selectButton" layoutX="520.0" layoutY="76.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="145.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="Select">
                <font>
                   <Font size="11.0" />
                </font>
@@ -42,7 +42,8 @@
                         <Font name="Arial Bold" size="18.0" />
                     </font>
                 </Label>
-            <Label layoutX="194.0" layoutY="11.0" styleClass="Label" stylesheets="@../CSS/Pathology.css" text="Lab Tests" />
+            <Label layoutX="271.0" layoutY="15.0" styleClass="Label" stylesheets="@../CSS/Pathology.css" text="Lab Tests" />
+            <TextField fx:id="chooseLabTestTxtField" layoutX="40.0" layoutY="78.0" prefHeight="39.0" prefWidth="459.0" promptText="Enter Name of Lab Test" stylesheets="@../CSS/Pathology.css" />
             </children>
         </AnchorPane>
     </center>

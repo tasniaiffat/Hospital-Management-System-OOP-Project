@@ -1,6 +1,7 @@
 package Models;
 
 import Models.ClassHierarchy.PathologyInterface;
+import Models.ClassHierarchy.PaymentStatus;
 import Models.ClassHierarchy.Service;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
@@ -9,6 +10,8 @@ import javafx.scene.paint.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
+import static Controllers.BillingScreenController.bill;
 
 public class Pathology extends Service implements PathologyInterface {
     private String testName;
@@ -94,9 +97,17 @@ public class Pathology extends Service implements PathologyInterface {
         return true;
     }
 
+    public boolean scheduleLabTest(){
+        bill.increaseBillingAmount(this.testPrice);
+        bill.setPaymentStatus(PaymentStatus.Due);
+        return true;
+    }
+
+
     @Override
     public boolean provideService() {
-        return super.provideService();
+        scheduleLabTest();
+        return true;
     }
 
 

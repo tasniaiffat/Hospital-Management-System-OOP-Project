@@ -53,14 +53,15 @@ public class BillingScreenController implements Initializable {
     @FXML
     private Label totalamountLabel;
 
-    public Billing bill;
+    public static Billing bill=new Billing();
 //
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String ID = chosenID;
 
         Patient patient = new Patient(ID);
-        bill = new Billing(patient, LocalDate.now(),0);
+        bill.setPatient(patient);
+        bill.setID(ID);
 
         idLabel.setText(patient.getID());
         nameLabel.setText(patient.getName());
