@@ -21,6 +21,12 @@ public abstract class Service {
         this.dateOfService = dateOfService;
     }
 
+    public Service(Patient patient, LocalDate dateOfService) {
+
+        this.patient = patient;
+        this.dateOfService = dateOfService;
+    }
+
     public Service(String ID, Patient patient){
         this.ID = ID;
         this.patient = patient;

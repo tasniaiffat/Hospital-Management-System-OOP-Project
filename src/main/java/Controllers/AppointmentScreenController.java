@@ -85,9 +85,9 @@ public class AppointmentScreenController implements Initializable {
             }
         });
 
-        newDoctorButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"DoctorInfoScreen.fxml","Add new patient");
-        });
+//        newDoctorButton.setOnAction( e -> {
+//            ManagementUtils.changeScence(e,"DoctorInfoScreen.fxml","Add new patient");
+//        });
 
         returnButton.setOnAction( e -> {
             ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Hello!");
@@ -99,11 +99,11 @@ public class AppointmentScreenController implements Initializable {
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
 
-        String searchPatientQuery = "SELECT `ID`, `Name`, `Email Address`, `Contact No` FROM hospital.patientinfo ;\n";
+        String searchDoctorQuery = "SELECT `ID`, `Name`, `Speciality`, `Contact No` FROM hospital.doctorinfo ;\n";
 
         try{
             Statement statement = connectDB.createStatement();
-            ResultSet queryOutput = statement.executeQuery(searchPatientQuery);
+            ResultSet queryOutput = statement.executeQuery(searchDoctorQuery);
 
             while(queryOutput.next()){
                 String DoctorID = queryOutput.getString("ID");

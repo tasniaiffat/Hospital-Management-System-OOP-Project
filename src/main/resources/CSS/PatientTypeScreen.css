@@ -34,8 +34,35 @@
     -fx-cursor: hand;
 }
 
+.AdminButton{
+    -fx-min-width: 200px;
+    -fx-max-width: 400px;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14pt;
+    -fx-background-color: #DE5D83;
+    -fx-text-fill: #ffffff;
+    -fx-border: 0;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+}
+.AdminButton:hover {
+    -fx-min-width: 200px;
+    -fx-max-width: 400px;
+    -fx-background-color: transparent;
+    -fx-text-fill: #008CBA;
+    -fx-border-width: 2px;
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 25px;
+    -fx-font-weight: bolder;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14pt;
+    -fx-border: 0;
+    -fx-background-radius: 25px;
+    -fx-cursor: hand;
+}
+
 .PatientTypeLabel{
-    -fx-font-size: 35pt;
+    -fx-font-size: 30pt;
     -fx-border-width: 10000;
     -fx-text-fill: #0b4a52;
     -fx-font-family: 'Arial';
@@ -50,11 +77,11 @@
 }
 
 .LogOutButton {
-    -fx-background-color: #008CBA;
+    -fx-background-color: #DE5D83;
     -fx-font-family: 'Arial';
     -fx-text-fill: #fff;
     -fx-font-weight: bold;
-    -fx-font-size: 24px;
+    -fx-font-size: 20px;
     -fx-border-radius: 2px;
     -fx-background-radius: 25px;
     -fx-cursor: hand;

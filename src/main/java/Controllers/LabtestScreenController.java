@@ -44,14 +44,14 @@ public class LabtestScreenController implements Initializable {
             boolean successfulAdd = pathology.addPathology(errorMessage,e);
 
             if(successfulAdd){
-                ChoosePatientScreenController.chosenID = pathology.getID();
-                ManagementUtils.changeScence(e,"Pathology.fxml","Choose a Test");
+//                ChoosePatientScreenController.chosenID = pathology.getID();
+//                ManagementUtils.changeScence(e,"Pathology.fxml","Choose a Test");
             }
 
         });
 
         returnButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"Pathology.fxml","Hello!");
+            ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Hello!");
         });
 
 //        backButton.setOnAction(( e -> {

@@ -26,8 +26,6 @@
                 <TextField fx:id="newTestDesciption" layoutX="387.0" layoutY="269.0" prefHeight="71.0" prefWidth="297.0" promptText="Description" styleClass="TextField" stylesheets="@../CSS/AddMedicineScreen.css" />
                 <Button fx:id="addPathologyButton" layoutX="203.0" layoutY="477.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="PatientInfoButton" stylesheets="@../CSS/PatientInfoScreen.css" text="Add Pathology">
 
-                <TextField fx:id="newTestDesciption" layoutX="387.0" layoutY="269.0" prefHeight="93.0" prefWidth="297.0" promptText="Description" styleClass="TextField" stylesheets="@../CSS/AddMedicineScreen.css" />
-                <Button fx:id="addPathologyButton" layoutX="211.0" layoutY="454.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="PatientInfoButton" stylesheets="@../CSS/PatientInfoScreen.css" text="Add Pathology">
 
                     <font>
                         <Font name="System Bold" size="18.0" />

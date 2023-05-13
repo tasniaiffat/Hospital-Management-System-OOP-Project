@@ -94,21 +94,19 @@ public class PathologyController implements Initializable {
 //        selectButton.setOnAction( e -> {
 //            // Add to cart and update bill
 //        });
-        removeButton.setOnAction(( e -> {
-            Pathology selectedtest = PathologyTable.getSelectionModel().getSelectedItem();
-            if (selectedtest != null) {
-                selectedtest.removePathology(errorMessage,e);
-            }
-        }));
+//        removeButton.setOnAction(( e -> {
+//            Pathology selectedtest = PathologyTable.getSelectionModel().getSelectedItem();
+//            if (selectedtest != null) {
+//                selectedtest.removePathology(errorMessage,e);
+//            }
+//            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Choose Lab Test");
+//        }));
 
         PathologyConfirmButton.setOnAction( e -> {
 
         // Add to cart and update billing
         });
 
-        addButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"AddPathology.fxml","Add a Labtest");
-        });
 
         backButton.setOnAction( e -> {
             ManagementUtils.changeScence(e, "ReceptionScreen.fxml","Reception");

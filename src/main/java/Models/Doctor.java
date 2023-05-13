@@ -143,7 +143,7 @@ public class Doctor extends Person implements DoctorInterface{
         //String treatment = String.join(",",currentTreatment);
         String date = this.getDate().toString();
 
-        String connectQuery = "INSERT INTO `hospital`.`doctorinfo`(`ID`,`Name`,`Speciality`,`Contact No`,`Email Address`,`Address`,`Date of Birth`,`Gender`,'Qualification') values (?,?,?,?,?,?,?,?,?);\n";
+        String connectQuery = "INSERT INTO `hospital`.`doctorinfo`(`ID`,`Name`,`Speciality`,`Contact No`,`Email Address`,`Address`,`Date of Birth`,`Gender`,`Qualification`) values (?,?,?,?,?,?,?,?,?);\n";
 
         try {
             PreparedStatement statement = connectDB.prepareStatement(connectQuery);

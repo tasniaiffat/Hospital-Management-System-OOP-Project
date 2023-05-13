@@ -15,6 +15,10 @@ public class PatientTypeScreenController implements Initializable {
     @FXML
     private Button addMedicineButton;
     @FXML
+    private Button addDoctorButton;
+    @FXML
+    private Button addLabTestButton;
+    @FXML
     private Button existingPatientButton;
 
     @FXML
@@ -45,6 +49,12 @@ public class PatientTypeScreenController implements Initializable {
         });
         addMedicineButton.setOnAction( e -> {
             ManagementUtils.changeScence(e, "AddMedicine.fxml","Add a Medicine");
+        });
+        addDoctorButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e, "DoctorInfoScreen.fxml","Add a Medicine");
+        });
+        addLabTestButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e, "AddPathology.fxml","Add a Medicine");
         });
 
     }

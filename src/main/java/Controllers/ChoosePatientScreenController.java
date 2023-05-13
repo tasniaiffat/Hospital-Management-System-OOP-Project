@@ -90,14 +90,15 @@ public class ChoosePatientScreenController implements Initializable {
 
 
         backButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Hello!");
-
-        logOutButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Hello!");
-
+                    ManagementUtils.changeScence(e, "PatientTypeScreen.fxml", "Hello!");
         });
 
-    }
+//        returnButton.setOnAction( e -> {
+//            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Hello!");
+//
+//        });
+        }
+
 
     public void searchPatient(){
         DBUtils connectNow = new DBUtils();
