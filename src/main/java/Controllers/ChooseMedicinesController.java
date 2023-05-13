@@ -129,6 +129,10 @@ public class ChooseMedicinesController implements Initializable {
                 if(selectedMed.getQuantity()>0){
                     selectedMed.updateQuantity();
                     //update billing
+                    boolean provided = selectedMed.provideService();
+                    if(!provided){
+                        errorMessage.setText("Service could not be provided");
+                    }
                 }
             }
             else{

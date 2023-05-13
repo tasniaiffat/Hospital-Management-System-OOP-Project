@@ -24,6 +24,15 @@ public class Doctor extends Person implements DoctorInterface{
         this.isAvailable = isAvailable;
     }
 
+    public Doctor(String ID,String name, String speciality, String contactNo) {
+        super();
+        this.ID = ID;
+        this.name = name;
+        this.speciality = speciality;
+        this.contactNo = contactNo;
+    }
+
+
     public Doctor() {}
 
     public String getQualification() {

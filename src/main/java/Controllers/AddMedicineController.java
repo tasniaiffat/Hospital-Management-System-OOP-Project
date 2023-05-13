@@ -53,7 +53,7 @@ public class AddMedicineController implements Initializable {
 
             if(successfulAdd){
                 //ChoosePatientScreenController.chosenID = medicine.getID();
-                ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Choose a Medicine");
+                ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Choose a Patient");
             }
 
         });

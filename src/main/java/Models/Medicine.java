@@ -59,6 +59,15 @@ public class Medicine extends Service implements MedicineInterface {
         this.quantityAvailable = quantity;
     }
 
+    @Override
+    public boolean provideService() {
+
+        return super.provideService();
+    }
+//    public boolean provideService(Billing bill){
+//        bill.updateBill();
+//    }
+
     public Medicine(String medicineID){
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();

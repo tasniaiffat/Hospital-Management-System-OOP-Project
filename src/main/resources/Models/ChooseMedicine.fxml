@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -34,9 +33,8 @@
                         <TableColumn fx:id="medCompany" prefWidth="200.0" text="Company" />
                     </columns>
                 </TableView>
-                <TextField fx:id="chooseMedTextField" layoutX="27.0" layoutY="64.0" prefHeight="39.0" prefWidth="289.0" promptText="Enter Keyword" styleClass="TextField" stylesheets="@../CSS/ChooseMedicine.css" text="Enter Name of Medicine" />
-                <Button fx:id="selectMedButton" layoutX="383.0" layoutY="66.0" minWidth="103.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Select" />
-                <Button fx:id="removeMedButton" layoutX="514.0" layoutY="66.0" minWidth="108.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Remove" />
+                <Button fx:id="selectMedButton" layoutX="447.0" layoutY="80.0" minWidth="103.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Select" />
+                <Button fx:id="removeMedButton" layoutX="568.0" layoutY="80.0" minWidth="108.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Remove" />
                 <Label fx:id="errorMessage" alignment="CENTER" layoutX="98.0" layoutY="102.0" prefHeight="27.0" prefWidth="524.0" text=" " textAlignment="CENTER" textFill="#f20000">
                     <font>
                         <Font name="Arial Bold" size="18.0" />

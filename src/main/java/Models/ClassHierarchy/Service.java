@@ -8,10 +8,6 @@ public abstract class Service {
     protected String ID;
     private Patient patient;
     private LocalDate dateOfService;
-    protected String medicineName;
-    protected String medicineCompany;
-    protected double medicinePrice;
-    protected int quantityAvailable;
     private double totalBill = 0;
 
     public double gettotalbill(){return totalBill;}
@@ -24,6 +20,12 @@ public abstract class Service {
         this.patient = patient;
         this.dateOfService = dateOfService;
     }
+
+    public Service(String ID, Patient patient){
+        this.ID = ID;
+        this.patient = patient;
+    }
+
 
     public Service() {}
 

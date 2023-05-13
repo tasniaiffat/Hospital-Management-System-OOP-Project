@@ -33,8 +33,7 @@
                         <TableColumn fx:id="Testdescription" prefWidth="150.0" text="Description" />
                     </columns>
                 </TableView>
-                <Button fx:id="selectButton" layoutX="518.0" layoutY="90.0" minWidth="103.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="146.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Select" />
-                <Button fx:id="addButton" layoutX="515.0" layoutY="138.0" minWidth="108.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="146.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Add" />
+                <Button fx:id="addButton" layoutX="515.0" layoutY="90.0" minWidth="108.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="146.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Add" />
                 <Button fx:id="backButton" layoutX="561.0" layoutY="33.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="100.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="Back">
                     <font>
                         <Font size="11.0" />
@@ -50,7 +49,7 @@
                     </font>
                 </Label>
             <Label layoutX="194.0" layoutY="24.0" styleClass="Label" stylesheets="@../CSS/Pathology.css" text="Lab Tests" />
-            <Button fx:id="removeButton" layoutX="515.0" layoutY="195.0" minWidth="108.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="146.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Remove" />
+            <Button fx:id="removeButton" layoutX="515.0" layoutY="145.0" minWidth="108.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="146.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Remove" />
             </children>
         </AnchorPane>
     </center>
