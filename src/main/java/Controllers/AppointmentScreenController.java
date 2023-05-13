@@ -1,7 +1,9 @@
 package Controllers;
 
-import Models.*;
-import Models.ClassHierarchy.Service;
+import Models.DBUtils;
+import Models.Doctor;
+import Models.ManagementUtils;
+import Models.Patient;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -60,7 +62,6 @@ public class AppointmentScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Appointment app=new Appointment();
 
         searchDoctor();
 
@@ -70,7 +71,6 @@ public class AppointmentScreenController implements Initializable {
                 String ID = selectedDoctor.getID();
                 chosenID = ID;
                 errorMessage.setText("Appointment Made");
-                app.provideService();
                 ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             }
             else{
@@ -122,7 +122,7 @@ public class AppointmentScreenController implements Initializable {
 
             chooseDoctorTable.setItems(DoctorList);
 
-            filterList();
+//            filterList();
 
 
         } catch (Exception e){
@@ -130,35 +130,35 @@ public class AppointmentScreenController implements Initializable {
         }
     }
 
-    public void filterList(){
-        FilteredList<Doctor> filteredList = new FilteredList<>(DoctorList, b -> true);
-
-        chooseDoctorTxtField.textProperty().addListener( (observable, oldValue, newValue) -> {
-            filteredList.setPredicate( Doctor -> {
-                if(newValue.isEmpty() || newValue.isBlank() || newValue==null){
-                    return true;
-                }
-
-                String searchKeyword = newValue.toLowerCase();
-
-                if(Doctor.getName().toLowerCase().contains(searchKeyword)){
-                    return true;
-                } else if(Doctor.getID().toLowerCase().contains(searchKeyword)){
-                    return true;
-                } else if(Doctor.getSpeciality().toLowerCase().contains(searchKeyword)){
-                    return true;
-                } else if(Doctor.getContactNo().toLowerCase().contains(searchKeyword)){
-                    return true;
-                } else return false;
-
-            });
-        });
-
-        SortedList<Doctor> sortedList = new SortedList<>(filteredList);
-        sortedList.comparatorProperty().bind(chooseDoctorTable.comparatorProperty());
-
-        chooseDoctorTable.setItems(sortedList);
-
-    }
+//    public void filterList(){
+//        FilteredList<Patient> filteredList = new FilteredList<>(DoctorList, b -> true);
+//
+//        chooseDoctorTxtField.textProperty().addListener( (observable, oldValue, newValue) -> {
+//            filteredList.setPredicate( Patient -> {
+//                if(newValue.isEmpty() || newValue.isBlank() || newValue==null){
+//                    return true;
+//                }
+//
+//                String searchKeyword = newValue.toLowerCase();
+//
+//                if(Doctor.getName().toLowerCase().contains(searchKeyword)){
+//                    return true;
+//                } else if(Doctor.getID().toLowerCase().contains(searchKeyword)){
+//                    return true;
+//                } else if(Doctor.getSpeciality().toLowerCase().contains(searchKeyword)){
+//                    return true;
+//                } else if(Doctor.getContactNo().toLowerCase().contains(searchKeyword)){
+//                    return true;
+//                } else return false;
+//
+//            });
+//        });
+//
+//        SortedList<Patient> sortedList = new SortedList<>(filteredList);
+//        sortedList.comparatorProperty().bind(chooseDoctorTable.comparatorProperty());
+//
+//        chooseDoctorTable.setItems(sortedList);
+//
+//    }
 
 }
