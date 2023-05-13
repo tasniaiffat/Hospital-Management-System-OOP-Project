@@ -84,6 +84,9 @@ public class ReceptionScreenController implements Initializable{
             ManagementUtils.changeScence(e,"WelcomeScreen.fxml","Hello!");
         });
 
+        billingButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e, "BillingScreen.fxml","Billing");
+        });
     }
 
 
