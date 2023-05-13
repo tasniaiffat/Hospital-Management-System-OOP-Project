@@ -54,7 +54,7 @@ public class PathologyController implements Initializable {
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
 
-        String searchPathologyQuery = "SELECT `ID`, `Test Name`, `Test Description`, `Price` FROM hospital.Pathologyinfo ;\n";
+        String searchPathologyQuery = "SELECT `ID`, `Test Name`, `Test Description`, `Price` FROM hospital.pathologyinfo ;\n";
 
         try{
             Statement statement = connectDB.createStatement();
