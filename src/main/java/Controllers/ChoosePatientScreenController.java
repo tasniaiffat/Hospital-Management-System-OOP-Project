@@ -88,8 +88,13 @@ public class ChoosePatientScreenController implements Initializable {
             ManagementUtils.changeScence(e,"PatientInfoScreen.fxml","Add new patient");
         });
 
+
         backButton.setOnAction( e -> {
             ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Hello!");
+
+        logOutButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Hello!");
+
         });
 
     }

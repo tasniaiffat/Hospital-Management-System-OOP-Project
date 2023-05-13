@@ -98,12 +98,12 @@ public class DashboardScreenController implements Initializable {
 
 
 
-        backButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
-        });
+//        backButton.setOnAction( e -> {
+//            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
+//        });
 
         logOutButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e, "WelcomeScreen.fxml","Hello!");
+            ManagementUtils.changeScence(e, "ReceptionScreen.fxml","Hello!");
         });
     }
 }

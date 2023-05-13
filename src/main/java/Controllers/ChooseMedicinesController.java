@@ -21,6 +21,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 public class ChooseMedicinesController implements Initializable {
     @FXML
     private TableColumn<Medicine, Double> medPrice;
@@ -159,4 +160,5 @@ public class ChooseMedicinesController implements Initializable {
 
 
     }
+
 }
