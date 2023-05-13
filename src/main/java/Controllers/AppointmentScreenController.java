@@ -1,9 +1,7 @@
 package Controllers;
 
-import Models.DBUtils;
-import Models.Doctor;
-import Models.ManagementUtils;
-import Models.Patient;
+import Models.*;
+import Models.ClassHierarchy.Service;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -62,6 +60,7 @@ public class AppointmentScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Appointment app=new Appointment();
 
         searchDoctor();
 
@@ -71,6 +70,7 @@ public class AppointmentScreenController implements Initializable {
                 String ID = selectedDoctor.getID();
                 chosenID = ID;
                 errorMessage.setText("Appointment Made");
+                app.provideService();
                 ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             }
             else{

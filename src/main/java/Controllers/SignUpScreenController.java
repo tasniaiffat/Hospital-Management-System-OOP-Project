@@ -43,6 +43,7 @@ public class SignUpScreenController implements Initializable {
 
         signUpButton.setOnAction( e -> {
             successfulSignUp = receptionist.signUp(signUpEmail,signUpPass,signUpConfirmPass,errorMessage);
+            ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Reception");
         });
     }
 }

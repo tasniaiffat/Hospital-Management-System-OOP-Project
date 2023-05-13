@@ -21,6 +21,7 @@ public class Billing extends Service{
         this.ID = generateID(patient);
     }
 
+
     public String generateID(Patient patient){
         String IDNum = patient.getID().substring(3);
         return "BIL"+IDNum;
@@ -30,8 +31,8 @@ public class Billing extends Service{
         return billingAmount;
     }
 
-    public void setBillingAmount(double billingAmount) {
-        this.billingAmount = billingAmount;
+    public void setBillingAmount(double newamount) {
+        this.billingAmount = billingAmount+=newamount;
     }
 
     public PaymentStatus getPaymentStatus() {
