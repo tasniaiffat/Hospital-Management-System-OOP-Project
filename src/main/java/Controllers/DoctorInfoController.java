@@ -102,7 +102,7 @@ public class DoctorInfoController implements Initializable {
             else successfulAdd = false;
 
             if(successfulAdd){
-                ChoosePatientScreenController.chosenID = doctor.getID();
+                //ChoosePatientScreenController.chosenID = doctor.getID();
                 ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             }
 

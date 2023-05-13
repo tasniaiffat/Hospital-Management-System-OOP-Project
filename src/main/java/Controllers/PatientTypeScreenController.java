@@ -13,6 +13,8 @@ import java.util.ResourceBundle;
 public class PatientTypeScreenController implements Initializable {
 
     @FXML
+    private Button addMedicineButton;
+    @FXML
     private Button existingPatientButton;
 
     @FXML
@@ -40,6 +42,9 @@ public class PatientTypeScreenController implements Initializable {
 
         logOutButton.setOnAction( e -> {
             ManagementUtils.changeScence(e,"WelcomeScreen.fxml","Hello!");
+        });
+        addMedicineButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e, "AddMedicine.fxml","Add a Medicine");
         });
 
     }

@@ -22,7 +22,7 @@
             </children></AnchorPane>
     </left>
     <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="ChoosePatientCenter" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
+        <AnchorPane fx:id="BackButton" prefHeight="200.0" prefWidth="200.0" styleClass="ChoosePatientCenter" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
             <children>
                 <TableView fx:id="PathologyTable" layoutX="40.0" layoutY="90.0" prefHeight="548.0" prefWidth="458.0" styleClass="Table" stylesheets="@../CSS/Pathology.css">
                     <columns>
@@ -35,7 +35,7 @@
                 </TableView>
                 <Button fx:id="selectButton" layoutX="518.0" layoutY="90.0" minWidth="103.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="146.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Select" />
                 <Button fx:id="addButton" layoutX="515.0" layoutY="138.0" minWidth="108.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="146.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Add" />
-                <Button fx:id="logOutButton" layoutX="638.0" layoutY="31.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="43.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="⏎">
+                <Button fx:id="backButton" layoutX="561.0" layoutY="33.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="100.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="Back">
                     <font>
                         <Font size="11.0" />
                     </font></Button>

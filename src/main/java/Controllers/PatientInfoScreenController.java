@@ -22,6 +22,8 @@ import java.util.ResourceBundle;
 public class PatientInfoScreenController implements Initializable {
 
     @FXML
+    private Button backButton;
+    @FXML
     private Button addPatientButton;
 
     @FXML
@@ -58,8 +60,6 @@ public class PatientInfoScreenController implements Initializable {
     @FXML
     private TextField newPatientName;
 
-    @FXML
-    private Button logOutButton;
 
 
     public void handleMaleBox(ActionEvent event){
@@ -113,8 +113,8 @@ public class PatientInfoScreenController implements Initializable {
 
         });
 
-        logOutButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"WelcomeScreen.fxml","Hello!");
+        backButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Choose a Patient");
         });
     }
 }

@@ -39,7 +39,7 @@ public class ChooseMedicinesController implements Initializable {
     @FXML
     private Label errorMessage;
     @FXML
-    private Button logOutButton;
+    private Button backButton;
     @FXML
     private Button updateStockButton;
     @FXML
@@ -128,8 +128,7 @@ public class ChooseMedicinesController implements Initializable {
                 chosenID = ID;
                 if(selectedMed.getQuantity()>0){
                     selectedMed.updateQuantity();
-                    // update billings
-
+                    //update billing
                 }
             }
             else{
@@ -144,12 +143,12 @@ public class ChooseMedicinesController implements Initializable {
             }
         });
 
-        addMedButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"AddMedicine.fxml","Add new Medicine");
-        });
+//        addMedButton.setOnAction( e -> {
+//            ManagementUtils.changeScence(e,"AddMedicine.fxml","Add new Medicine");
+//        });
 
-        logOutButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"WelcomeScreen.fxml","Hello!");
+        backButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
         });
 
 

@@ -54,7 +54,7 @@ public class Doctor extends Person implements DoctorInterface{
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
 
-        String selectDoctorQuery = "SELECT * FROM hospital.DoctorInfo WHERE ID = "+"'"+DoctorID+"'";
+        String selectDoctorQuery = "SELECT * FROM hospital.doctorinfo WHERE ID = "+"'"+DoctorID+"'";
 
 
 
@@ -98,7 +98,7 @@ public class Doctor extends Person implements DoctorInterface{
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
 //        String connectQuery = "SELECT COUNT(*) FROM `hospital`.`patientinfo`;\n";
-        String connectQuery = "SELECT ID from hospital.DoctorInfo ORDER BY ID DESC LIMIT 1";
+        String connectQuery = "SELECT ID from hospital.doctorinfo ORDER BY ID DESC LIMIT 1";
 //        int count=0;
         int IDNumber=1;
 
@@ -134,7 +134,7 @@ public class Doctor extends Person implements DoctorInterface{
         //String treatment = String.join(",",currentTreatment);
         String date = this.getDate().toString();
 
-        String connectQuery = "INSERT INTO `hospital`.`DoctorInfo`(`ID`,`Name`,`Speciality`,`Contact No`,`Email Address`,`Address`,`Date of Birth`,`Gender`,'Qualification') values (?,?,?,?,?,?,?,?,?);\n";
+        String connectQuery = "INSERT INTO `hospital`.`doctorinfo`(`ID`,`Name`,`Speciality`,`Contact No`,`Email Address`,`Address`,`Date of Birth`,`Gender`,'Qualification') values (?,?,?,?,?,?,?,?,?);\n";
 
         try {
             PreparedStatement statement = connectDB.prepareStatement(connectQuery);
@@ -175,7 +175,7 @@ public class Doctor extends Person implements DoctorInterface{
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
 
-        String connectQuery = "DELETE FROM hospital.DoctorInfo WHERE ID= "+"'"+this.ID+"';";
+        String connectQuery = "DELETE FROM hospital.doctorinfo WHERE ID= "+"'"+this.ID+"';";
 
         try {
             PreparedStatement statement = connectDB.prepareStatement(connectQuery);

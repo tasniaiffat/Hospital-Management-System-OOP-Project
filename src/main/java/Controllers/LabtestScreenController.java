@@ -27,8 +27,7 @@ public class LabtestScreenController implements Initializable {
     private Label errorMessage;
     @FXML
     private Button returnButton;
-    @FXML
-    private Button backButton;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,11 +51,9 @@ public class LabtestScreenController implements Initializable {
         });
 
         returnButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"WelcomeScreen.fxml","Hello!");
+            ManagementUtils.changeScence(e,"Pathology.fxml","Hello!");
         });
-        backButton.setOnAction(( e -> {
-            ManagementUtils.changeScence(e,"Pathology.fxml","Choose a test");
-        }));
+
     }
 
 

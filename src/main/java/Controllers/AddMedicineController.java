@@ -52,14 +52,14 @@ public class AddMedicineController implements Initializable {
             boolean successfulAdd = medicine.addMedicine(errorMessage,e);
 
             if(successfulAdd){
-                ChoosePatientScreenController.chosenID = medicine.getID();
-                ManagementUtils.changeScence(e,"ChooseMedicine.fxml","Choose a Medicine");
+                //ChoosePatientScreenController.chosenID = medicine.getID();
+                ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Choose a Medicine");
             }
 
         });
 
         returnButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"ChooseMedicine.fxml","Choose a Medicine");
+            ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Choose a Medicine");
         });
     }
 }

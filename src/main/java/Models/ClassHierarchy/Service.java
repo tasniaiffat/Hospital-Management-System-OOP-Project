@@ -12,7 +12,12 @@ public abstract class Service {
     protected String medicineCompany;
     protected double medicinePrice;
     protected int quantityAvailable;
-    private int totalBill;
+    private double totalBill = 0;
+
+    public double gettotalbill(){return totalBill;}
+    public void updateBill(double newBill){
+        totalBill = totalBill+newBill;
+    }
 
     public Service(String ID, Patient patient, LocalDate dateOfService) {
         this.ID = ID;
@@ -29,14 +34,6 @@ public abstract class Service {
     public void setID(String ID) {
         this.ID = ID;
     }
-    public void setMedicineName(String name){this.medicineName = name;}
-    public String getMedicineName(){return medicineName;}
-    public void setMedicineCompany(String company){ this.medicineCompany = company;}
-    public String getMedicineCompany(){return this.medicineCompany;}
-    public double getMedicinePrice(){return medicinePrice;}
-    public void setMedicinePrice(double price){this.medicinePrice = price;}
-    public void setQuantityAvailable(int ava){this.quantityAvailable = ava;}
-    public int getQuantityAvailable(){return this.quantityAvailable;}
 
     public Patient getPatient() {
         return patient;

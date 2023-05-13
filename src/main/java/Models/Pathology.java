@@ -51,7 +51,7 @@ public class Pathology extends Service implements PathologyInterface {
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
 
-        String selectDoctorQuery = "SELECT * FROM hospital.Pathologyinfo WHERE ID = "+"'"+pathologyID+"'";
+        String selectDoctorQuery = "SELECT * FROM hospital.pathologyinfo WHERE ID = "+"'"+pathologyID+"'";
 
 
 
@@ -110,7 +110,7 @@ public class Pathology extends Service implements PathologyInterface {
         //String treatment = String.join(",",currentTreatment);
         //String date = this.getDate().toString();
 
-        String connectQuery = "INSERT INTO `hospital`.`Pathologyinfo`(`ID`,`Test Name`,`Test Description`,`Price`) values (?,?,?,?);\n";
+        String connectQuery = "INSERT INTO `hospital`.`pathologyinfo`(`ID`,`Test Name`,`Test Description`,`Price`) values (?,?,?,?);\n";
 
         try {
             PreparedStatement statement = connectDB.prepareStatement(connectQuery);
@@ -146,7 +146,7 @@ public class Pathology extends Service implements PathologyInterface {
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
 //        String connectQuery = "SELECT COUNT(*) FROM `hospital`.`patientinfo`;\n";
-        String connectQuery = "SELECT ID from hospital.Pathologyinfo ORDER BY ID DESC LIMIT 1";
+        String connectQuery = "SELECT ID from hospital.pathologyinfo ORDER BY ID DESC LIMIT 1";
 //        int count=0;
         int IDNumber=1;
 
@@ -177,7 +177,7 @@ public class Pathology extends Service implements PathologyInterface {
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
 
-        String connectQuery = "DELETE FROM hospital.Pathologyinfo WHERE ID= "+"'"+this.ID+"';";
+        String connectQuery = "DELETE FROM hospital.pathologyinfo WHERE ID= "+"'"+this.ID+"';";
 
         try {
             PreparedStatement statement = connectDB.prepareStatement(connectQuery);

@@ -946,19 +946,19 @@
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="299" parent="288" name="DoctorInfo">
+    <table id="299" parent="288" name="doctorinfo">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="300" parent="288" name="Pathologyinfo">
+    <table id="300" parent="288" name="logininfo">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="301" parent="288" name="logininfo">
+    <table id="301" parent="288" name="medicineinfo">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="302" parent="288" name="medicineinfo">
+    <table id="302" parent="288" name="pathologyinfo">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
@@ -1002,49 +1002,49 @@
       <DasType>varchar(45)|0s</DasType>
       <Position>9</Position>
     </column>
-    <column id="313" parent="300" name="ID">
-      <DasType>varchar(10)|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="314" parent="300" name="Test Name">
-      <DasType>varchar(45)|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="315" parent="300" name="Test Description">
-      <DasType>varchar(65)|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="316" parent="300" name="Price">
-      <DasType>varchar(45)|0s</DasType>
-      <Position>4</Position>
-    </column>
-    <column id="317" parent="301" name="email address">
+    <column id="313" parent="300" name="email address">
       <DasType>varchar(70)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="318" parent="301" name="password">
+    <column id="314" parent="300" name="password">
       <DasType>varchar(45)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="319" parent="302" name="ID">
+    <column id="315" parent="301" name="ID">
       <DasType>varchar(14)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="320" parent="302" name="Medicine Name">
+    <column id="316" parent="301" name="Medicine Name">
       <DasType>varchar(45)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="321" parent="302" name="Company">
+    <column id="317" parent="301" name="Company">
       <DasType>varchar(45)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="322" parent="302" name="Price">
+    <column id="318" parent="301" name="Price">
       <DasType>double|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="323" parent="302" name="Quantity">
+    <column id="319" parent="301" name="Quantity">
       <DasType>int|0s</DasType>
       <Position>5</Position>
+    </column>
+    <column id="320" parent="302" name="ID">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="321" parent="302" name="Test Name">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="322" parent="302" name="Test Description">
+      <DasType>varchar(65)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="323" parent="302" name="Price">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>4</Position>
     </column>
     <column id="324" parent="303" name="ID">
       <DasType>varchar(10)|0s</DasType>

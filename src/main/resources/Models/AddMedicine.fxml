@@ -37,7 +37,7 @@
                         <Font name="Arial Bold" size="18.0" />
                     </font>
                 </Label>
-                <Button fx:id="returnButton" layoutX="647.0" layoutY="32.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="42.0" styleClass="LogOutButton" stylesheets="@../CSS/AddMedicineScreen.css" text="⏎" />
+                <Button fx:id="returnButton" layoutX="607.0" layoutY="32.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="82.0" styleClass="LogOutButton" stylesheets="@../CSS/AddMedicineScreen.css" text="Back" />
             <TextField fx:id="newmedcompany" layoutX="387.0" layoutY="323.0" prefHeight="38.0" prefWidth="297.0" promptText="Company" styleClass="TextField" stylesheets="@../CSS/AddMedicineScreen.css" />
             </children>
         </AnchorPane>

@@ -40,7 +40,7 @@ public class PathologyController implements Initializable {
     @FXML
     private Button removeButton;
     @FXML
-    private Button logOutButton;
+    private Button backButton;
 
     @FXML
     private Button PathologyConfirmButton;
@@ -54,7 +54,7 @@ public class PathologyController implements Initializable {
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
 
-        String searchPathologyQuery = "SELECT `ID`, `Test Name`, `Test Description`, `Price` FROM hospital.Pathologyinfo ;\n";
+        String searchPathologyQuery = "SELECT `ID`, `Test Name`, `Test Description`, `Price` FROM hospital.pathologyinfo ;\n";
 
         try{
             Statement statement = connectDB.createStatement();
@@ -107,8 +107,8 @@ public class PathologyController implements Initializable {
             ManagementUtils.changeScence(e,"AddPathology.fxml","Add a Labtest");
         });
 
-        logOutButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e, "WelcomeScreen.fxml","Hello!");
+        backButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e, "ReceptionScreen.fxml","Reception");
         });
 
 
