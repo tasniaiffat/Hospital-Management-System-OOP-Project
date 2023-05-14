@@ -1,9 +1,6 @@
 package Controllers;
 
-import Models.DBUtils;
-import Models.Doctor;
-import Models.ManagementUtils;
-import Models.Patient;
+import Models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -18,12 +15,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static java.lang.String.join;
+import static Controllers.ChoosePatientScreenController.chosenID;
 
 public class AppointmentScreenController implements Initializable {
 
@@ -58,7 +58,7 @@ public class AppointmentScreenController implements Initializable {
     private Button returnButton;
     ObservableList<Doctor> DoctorList = FXCollections.observableArrayList();
 
-    public static String chosenID = null;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -69,7 +69,37 @@ public class AppointmentScreenController implements Initializable {
             Doctor selectedDoctor = chooseDoctorTable.getSelectionModel().getSelectedItem();
             if (selectedDoctor != null) {
                 String ID = selectedDoctor.getID();
-                chosenID = ID;
+                String name = selectedDoctor.getName();
+                String speciality= selectedDoctor.getSpeciality();
+
+                DBUtils connectNow = new DBUtils();
+                Connection connectDB = connectNow.getConnection();
+                String appointmentStr = "Consulted "+name+" ("+speciality+")";
+                Patient patient = new Patient(chosenID);
+                List<String> patientList = patient.getCurrentTreatment();
+                patientList.add(appointmentStr);
+                appointmentStr = join(", ",patientList);
+//                System.out.println(appointmentStr);
+
+
+                try {
+                    String updateStockQuery = "UPDATE hospital.patientinfo SET `Current Treatment` = ?";
+                    PreparedStatement statement = connectDB.prepareStatement(updateStockQuery);
+
+                    // Set the new value for the VARCHAR column
+                    statement.setString(1, appointmentStr);
+
+                    int rowsAffected = statement.executeUpdate();
+
+                    statement.close();
+                    connectDB.close();
+                } catch (SQLException f) {
+                    System.out.println("SQL ERROR in Appointment choose: " + f.getMessage());
+                    f.printStackTrace();
+                }
+
+
+//                chosenID = ID;
                 errorMessage.setText("Appointment Made");
                 ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             }
@@ -83,6 +113,7 @@ public class AppointmentScreenController implements Initializable {
             if (selectedDoctor != null) {
                 selectedDoctor.removeDoctor(errorMessage,e);
             }
+            ManagementUtils.changeScence(e,"AppointmentScreen.fxml","Appointment");
         });
 
 //        newDoctorButton.setOnAction( e -> {
@@ -122,7 +153,7 @@ public class AppointmentScreenController implements Initializable {
 
             chooseDoctorTable.setItems(DoctorList);
 
-//            filterList();
+            filterList();
 
 
         } catch (Exception e){
@@ -130,35 +161,35 @@ public class AppointmentScreenController implements Initializable {
         }
     }
 
-//    public void filterList(){
-//        FilteredList<Patient> filteredList = new FilteredList<>(DoctorList, b -> true);
-//
-//        chooseDoctorTxtField.textProperty().addListener( (observable, oldValue, newValue) -> {
-//            filteredList.setPredicate( Patient -> {
-//                if(newValue.isEmpty() || newValue.isBlank() || newValue==null){
-//                    return true;
-//                }
-//
-//                String searchKeyword = newValue.toLowerCase();
-//
-//                if(Doctor.getName().toLowerCase().contains(searchKeyword)){
-//                    return true;
-//                } else if(Doctor.getID().toLowerCase().contains(searchKeyword)){
-//                    return true;
-//                } else if(Doctor.getSpeciality().toLowerCase().contains(searchKeyword)){
-//                    return true;
-//                } else if(Doctor.getContactNo().toLowerCase().contains(searchKeyword)){
-//                    return true;
-//                } else return false;
-//
-//            });
-//        });
-//
-//        SortedList<Patient> sortedList = new SortedList<>(filteredList);
-//        sortedList.comparatorProperty().bind(chooseDoctorTable.comparatorProperty());
-//
-//        chooseDoctorTable.setItems(sortedList);
-//
-//    }
+    public void filterList(){
+        FilteredList<Doctor> filteredList = new FilteredList<>(DoctorList, b -> true);
+
+        chooseDoctorTxtField.textProperty().addListener( (observable, oldValue, newValue) -> {
+            filteredList.setPredicate( Doctor -> {
+                if(newValue.isEmpty() || newValue.isBlank() || newValue==null){
+                    return true;
+                }
+
+                String searchKeyword = newValue.toLowerCase();
+
+                if(Doctor.getName().toLowerCase().contains(searchKeyword)){
+                    return true;
+                } else if(Doctor.getID().toLowerCase().contains(searchKeyword)){
+                    return true;
+                } else if(Doctor.getSpeciality().toLowerCase().contains(searchKeyword)){
+                    return true;
+                } else if(Doctor.getContactNo().toLowerCase().contains(searchKeyword)){
+                    return true;
+                } else return false;
+
+            });
+        });
+
+        SortedList<Doctor> sortedList = new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(chooseDoctorTable.comparatorProperty());
+
+        chooseDoctorTable.setItems(sortedList);
+
+    }
 
 }

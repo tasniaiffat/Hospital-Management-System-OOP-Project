@@ -32,7 +32,7 @@
             <Button fx:id="anotherPatientButton" layoutX="203.0" layoutY="586.0" mnemonicParsing="false" styleClass="ReceptionSpecialButton" stylesheets="@../CSS/ReceptionScreen.css" text="Select another Patient" />
             <Label layoutX="132.0" layoutY="82.0" styleClass="ReceptionText" stylesheets="@../CSS/ReceptionScreen.css" text="Welcome to the Reception" />
             <Label fx:id="patientName" layoutX="159.0" layoutY="143.0" prefHeight="61.0" prefWidth="435.0" styleClass="ReceptionText" stylesheets="@../CSS/ReceptionScreen.css" />
-            <Button fx:id="logOutButton" layoutX="570.0" layoutY="28.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="124.0" styleClass="LogOutButton" stylesheets="@../CSS/ReceptionScreen.css" text="Log Out" />
+            <Button fx:id="logOutButton" layoutX="649.0" layoutY="28.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="45.0" styleClass="LogOutButton" stylesheets="@../CSS/ReceptionScreen.css" text="⏎" />
             </children>
         </AnchorPane>
     </center>

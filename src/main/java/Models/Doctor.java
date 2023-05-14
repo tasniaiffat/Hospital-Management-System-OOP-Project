@@ -74,7 +74,7 @@ public class Doctor extends Person implements DoctorInterface{
 
             if(queryOutput.next()){
                 this.ID = queryOutput.getString("ID");
-                this.name = queryOutput.getString("Name");
+                this.name = "Dr. "+queryOutput.getString("Name");
                 this.speciality = queryOutput.getString("Speciality");
                 this.contactNo = queryOutput.getString("Contact No");
                 this.emailAddress = queryOutput.getString("Email Address");

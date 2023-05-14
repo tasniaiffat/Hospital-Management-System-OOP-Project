@@ -8,9 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.time.LocalDate;
 
 import static Controllers.BillingScreenController.bill;
@@ -49,8 +47,24 @@ public class Medicine extends Service implements MedicineInterface {
         this.quantityAvailable = quantityAvailable;
     }
 
-    public void updateQuantity(){
-        if(quantityAvailable!=0) quantityAvailable--;
+    public boolean updateQuantity(int quantity){
+        if(quantityAvailable>=quantity) quantityAvailable-=quantity;
+        else{
+            return false;
+        }
+        DBUtils connectNow = new DBUtils();
+        Connection connectDB = connectNow.getConnection();
+
+        String updateStockQuery = "UPDATE hospital.medicineinfo SET Quantity = " +quantityAvailable;
+        Statement statement = null;
+        try {
+            statement = connectDB.createStatement();
+            int rowsAffected = statement.executeUpdate(updateStockQuery);
+        } catch (SQLException e) {
+            System.out.println("SQL ERROR in Medicine choose");
+        }
+
+        return true;
     }
 
 
@@ -62,15 +76,11 @@ public class Medicine extends Service implements MedicineInterface {
         this.quantityAvailable = quantity;
     }
 
-    public boolean buyMedicine(){
-        bill.increaseBillingAmount(this.medicinePrice);
-        bill.setPaymentStatus(PaymentStatus.Due);
-        return true;
-    }
 
     @Override
     public boolean provideService() {
-        buyMedicine();
+        bill.increaseBillingAmount(this.medicinePrice);
+        bill.setPaymentStatus(PaymentStatus.Due);
         return true;
     }
 

@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -33,6 +34,8 @@ public class ChooseMedicinesController implements Initializable {
     private TableColumn<Medicine, String> medCompany;
     @FXML
     private TextField chooseMedTextField;
+    @FXML
+    private TextField QuantityTextField;
     @FXML
     private Button selectMedButton;
     @FXML
@@ -102,7 +105,7 @@ public class ChooseMedicinesController implements Initializable {
                 }
 
                 String searchKeyword = newValue.toLowerCase();
-                System.out.println(searchKeyword);
+//                System.out.println(searchKeyword);
 
                 if(Medicine.getMedicineName().toLowerCase().contains(searchKeyword)){
                     return true;
@@ -131,10 +134,21 @@ public class ChooseMedicinesController implements Initializable {
                 String ID = selectedMed.getID();
                 chosenID = ID;
                 if(selectedMed.getQuantity()>0){
-                    selectedMed.updateQuantity();
-                    boolean provided = selectedMed.provideService();
+                    int quantity=1;
+                    String quantityStr = QuantityTextField.getText();
+                    if(!quantityStr.equals("")) quantity= Integer.parseInt(quantityStr);
+                    selectedMed.updateQuantity(quantity);
+                    boolean provided=false;
+                    for(int i=0;i<quantity;i++){
+                        provided = selectedMed.provideService();
+                    }
+                    ManagementUtils.changeScence(e,"ChooseMedicine.fxml","Choose Medicine");
                     if(!provided){
                         errorMessage.setText("Service could not be provided");
+                    }
+                    else{
+                        errorMessage.setTextFill(Color.web("#61cb34"));
+                        errorMessage.setText("Medicine Bought");
                     }
                 }
             }
@@ -148,6 +162,7 @@ public class ChooseMedicinesController implements Initializable {
             if (selectedMed != null) {
                 selectedMed.removeMedicine(errorMessage,e);
             }
+            ManagementUtils.changeScence(e,"ChooseMedicine.fxml","Select Medicine");
         });
 
 //        addMedButton.setOnAction( e -> {

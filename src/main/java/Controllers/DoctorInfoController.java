@@ -14,6 +14,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -27,7 +28,7 @@ public class DoctorInfoController implements Initializable {
     private Button addDoctorButton;
 
     @FXML
-    private Button backbutton;
+    private Button backButton;
 
 
     @FXML
@@ -64,7 +65,7 @@ public class DoctorInfoController implements Initializable {
     private TextField Specialbox;
 
     @FXML
-    private Button logOutButton;
+    private Button refreshButton;
 
 
     public void handleMaleBox(ActionEvent event){
@@ -82,35 +83,44 @@ public class DoctorInfoController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         addDoctorButton.setOnAction( e -> {
-            String DoctorName = newDoctorName.getText();
-            LocalDate DoctorDOB = newDoctorDob.getValue();
-            String DoctorContact = newDoctorContact.getText();
-            String DoctorAddress = newDoctorAddress.getText();
-            String DoctorEmail = newDoctorEmail.getText();
-            String doctorqualification = DoctorQualification.getText();
-            String speciality = Specialbox.getText();
-            boolean isavailable = false;
+            try{
+                String DoctorName = newDoctorName.getText();
+                LocalDate DoctorDOB = newDoctorDob.getValue();
+                String DoctorContact = newDoctorContact.getText();
+                String DoctorAddress = newDoctorAddress.getText();
+                String DoctorEmail = newDoctorEmail.getText();
+                String doctorqualification = DoctorQualification.getText();
+                String speciality = Specialbox.getText();
+                boolean isavailable = false;
 
-            Gender DoctorGender = null;
-            if(newDoctorIsMale.isSelected()) DoctorGender= Gender.Male;
-            else if(newDoctorIsFemale.isSelected()) DoctorGender = Gender.Female;
+                Gender DoctorGender = null;
+                if(newDoctorIsMale.isSelected()) DoctorGender= Gender.Male;
+                else if(newDoctorIsFemale.isSelected()) DoctorGender = Gender.Female;
 
 
-            Doctor doctor = new Doctor(DoctorName,DoctorContact,DoctorEmail,DoctorAddress,DoctorDOB,DoctorGender,doctorqualification,speciality,isavailable );
+                Doctor doctor = new Doctor(DoctorName,DoctorContact,DoctorEmail,DoctorAddress,DoctorDOB,DoctorGender,doctorqualification,speciality,isavailable );
 
-            boolean successfulAdd;
-            if (doctor.addDoctor(e, errorMessage)) successfulAdd = true;
-            else successfulAdd = false;
+                boolean successfulAdd;
+                if (doctor.addDoctor(e, errorMessage)) successfulAdd = true;
+                else successfulAdd = false;
 
-            if(successfulAdd){
-                //ChoosePatientScreenController.chosenID = doctor.getID();
+                if(successfulAdd){
+                    //ChoosePatientScreenController.chosenID = doctor.getID();
 //                ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Hello!");
+                }
+
+            } catch (Exception f){
+                errorMessage.setTextFill(Color.web("#e40707"));
+                errorMessage.setText("Please fill out all fields");
             }
 
         });
 
-        backbutton.setOnAction( e -> {
+        backButton.setOnAction( e -> {
             ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Hello!");
+        });
+        refreshButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"DoctorInfoScreen.fxml","Hello!");
         });
     }
 }

@@ -28,18 +28,19 @@
                         <TableColumn fx:id="medCompany" prefWidth="200.0" text="Company" />
                     </columns>
                 </TableView>
-                <Button fx:id="selectMedButton" layoutX="447.0" layoutY="80.0" minWidth="103.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Select" />
-                <Button fx:id="removeMedButton" layoutX="568.0" layoutY="80.0" minWidth="108.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Remove" />
+                <Button fx:id="selectMedButton" layoutX="445.0" layoutY="63.0" minWidth="103.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Select" />
+                <Button fx:id="removeMedButton" layoutX="568.0" layoutY="63.0" minWidth="108.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="SelectButton" stylesheets="@../CSS/ChooseMedicine.css" text="Remove" />
                 <Label fx:id="errorMessage" alignment="CENTER" layoutX="98.0" layoutY="102.0" prefHeight="27.0" prefWidth="524.0" text=" " textAlignment="CENTER" textFill="#f20000">
                     <font>
                         <Font name="Arial Bold" size="18.0" />
                     </font>
                 </Label>
-                <TextField fx:id="chooseMedTextField" layoutX="47.0" layoutY="79.0" prefHeight="39.0" prefWidth="365.0" promptText="Enter Name of Medicine" stylesheets="@../CSS/Pathology.css" />
+                <TextField fx:id="chooseMedTextField" layoutX="25.0" layoutY="60.0" prefHeight="39.0" prefWidth="226.0" promptText="Enter Name of Medicine" stylesheets="@../CSS/Pathology.css" />
                 <Button fx:id="backButton" layoutX="641.0" layoutY="14.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="38.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="⏎">
                     <font>
                         <Font size="11.0" />
                     </font></Button>
+            <TextField fx:id="QuantityTextField" layoutX="262.0" layoutY="60.0" prefHeight="39.0" prefWidth="172.0" promptText="Enter Quantity" stylesheets="@../CSS/Pathology.css" />
             </children>
         </AnchorPane>
     </center>

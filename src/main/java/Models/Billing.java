@@ -12,7 +12,7 @@ public class Billing extends Service{
 
     public Billing() {
         billingAmount=0;
-        paymentStatus = PaymentStatus.Due;
+        paymentStatus = PaymentStatus.Paid;
     }
 
     public Billing(Patient patient, LocalDate dateOfService, double billingAmount) {

@@ -53,8 +53,9 @@
 <!--                    </font>-->
 <!--                </Label>-->
                 <TextField fx:id="Specialbox" layoutX="48.0" layoutY="382.0" prefHeight="38.0" prefWidth="297.0" promptText="Specilaity" styleClass="TextField" stylesheets="@../CSS/PatientInfoScreen.css" />
-                <Button fx:id="backbutton" layoutX="212.0" layoutY="542.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="297.0" styleClass="PatientInfoButton" stylesheets="@../CSS/PatientInfoScreen.css" text="Back" />
                 <TextField fx:id="DoctorQualification" layoutX="379.0" layoutY="382.0" prefHeight="38.0" prefWidth="297.0" promptText="Qualification" styleClass="TextField" stylesheets="@../CSS/PatientInfoScreen.css" />
+            <Button fx:id="refreshButton" layoutX="48.0" layoutY="34.0" minWidth="46.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="46.0" styleClass="LogOutButton" stylesheets="@../CSS/PatientInfoScreen.css" text="↻" />
+            <Button fx:id="backButton" layoutX="647.0" layoutY="27.0" minWidth="46.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="46.0" styleClass="LogOutButton" stylesheets="@../CSS/PatientInfoScreen.css" text="⏎" />
             </children>
         </AnchorPane>
     </center>
