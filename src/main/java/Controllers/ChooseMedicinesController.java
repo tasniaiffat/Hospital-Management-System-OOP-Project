@@ -137,20 +137,26 @@ public class ChooseMedicinesController implements Initializable {
                     int quantity=1;
                     String quantityStr = QuantityTextField.getText();
                     if(!quantityStr.equals("")) quantity= Integer.parseInt(quantityStr);
-                    System.out.println(quantity);
-                    selectedMed.updateQuantity(ID,quantity);
-                    boolean provided=false;
-                    for(int i=0;i<quantity;i++){
-                        provided = selectedMed.provideService();
-                    }
-                    ManagementUtils.changeScence(e,"ChooseMedicine.fxml","Choose Medicine");
-                    if(!provided){
-                        errorMessage.setText("Service could not be provided");
+                   // System.out.println(quantity);
+                    if(quantity<=selectedMed.getQuantity()){
+                        selectedMed.updateQuantity(ID,quantity);
+                        boolean provided=false;
+                        for(int i=0;i<quantity;i++){
+                            provided = selectedMed.provideService();
+                        }
+                        ManagementUtils.changeScence(e,"ChooseMedicine.fxml","Choose Medicine");
+                        if(!provided){
+                            errorMessage.setText("Service could not be provided");
+                        }
+                        else{
+                            errorMessage.setTextFill(Color.web("#61cb34"));
+                            errorMessage.setText("Medicine Bought");
+                        }
                     }
                     else{
-                        errorMessage.setTextFill(Color.web("#61cb34"));
-                        errorMessage.setText("Medicine Bought");
+                        errorMessage.setText("Out of Stock");
                     }
+
                 }
             }
             else{

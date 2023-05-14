@@ -16,7 +16,7 @@
             <Button fx:id="addMedicineButton" layoutX="42.0" layoutY="406.0" minWidth="182.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="182.0" styleClass="AdminButton" stylesheets="@../CSS/PatientTypeScreen.css" text="Add Medicine" />
             <Button fx:id="addDoctorButton" layoutX="259.0" layoutY="406.0" minWidth="182.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="182.0" styleClass="AdminButton" stylesheets="@../CSS/PatientTypeScreen.css" text="Add Doctor" />
             <Button fx:id="addLabTestButton" layoutX="478.0" layoutY="406.0" minWidth="182.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="182.0" styleClass="AdminButton" stylesheets="@../CSS/PatientTypeScreen.css" text="Add Lab Test" />
-            <Label fx:id="patientTypeLabel1" layoutX="220.0" layoutY="132.0" styleClass="PatientTypeLabel" stylesheets="@../CSS/PatientTypeScreen.css" text="Admin Tools" />
+            <Label fx:id="patientTypeLabel1" layoutX="220.0" layoutY="132.0" styleClass="PatientTypeLabel" stylesheets="@../CSS/PatientTypeScreen.css" text="     Tools" />
          </children>
       </AnchorPane>
    </center>
