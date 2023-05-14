@@ -81,7 +81,7 @@ public class ReceptionScreenController implements Initializable{
         });
 
         logOutButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"WelcomeScreen.fxml","Hello!");
+            ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Hello!");
         });
 
         billingButton.setOnAction( e -> {

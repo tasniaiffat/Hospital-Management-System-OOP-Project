@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -23,14 +24,18 @@ import java.util.logging.Logger;
 
 
 public class ChooseMedicinesController implements Initializable {
+
+
     @FXML
     private TableColumn<Medicine, Double> medPrice;
     @FXML
     private TableColumn<Medicine, Integer> medStock;
     @FXML
     private TableColumn<Medicine, String> medCompany;
+//    @FXML
+//    private TextField chooseMedTextField;
     @FXML
-    private TextField chooseMedTextField;
+    private TextField QuantityTextField;
     @FXML
     private Button selectMedButton;
     @FXML
@@ -82,7 +87,7 @@ public class ChooseMedicinesController implements Initializable {
 
             chooseMedTable.setItems(medList);
 
-            filterList();
+//            filterList();
 
 
         } catch (Exception e){
@@ -90,34 +95,35 @@ public class ChooseMedicinesController implements Initializable {
         }
     }
 
-    public void filterList(){
-        FilteredList<Medicine> filteredList = new FilteredList<>(medList, b -> true);
-
-        chooseMedTextField.textProperty().addListener( (observable, oldValue, newValue) -> {
-            filteredList.setPredicate( Medicine -> {
-                if(newValue.isEmpty() || newValue.isBlank() || newValue==null){
-                    return true;
-                }
-
-                String searchKeyword = newValue.toLowerCase();
-
-                if(Medicine.getMedicineName().toLowerCase().contains(searchKeyword)){
-                    return true;
-                } else if(Medicine.getID().toLowerCase().contains(searchKeyword)){
-                    return true;
-                } else if(Medicine.getMedicineCompany().toLowerCase().contains(searchKeyword)){
-                    return true;
-                } else return false;
-
-            });
-        });
-
-        SortedList<Medicine> sortedList = new SortedList<>(filteredList);
-        sortedList.comparatorProperty().bind(chooseMedTable.comparatorProperty());
-
-        chooseMedTable.setItems(medList);
-
-    }
+//    public void filterList(){
+//        FilteredList<Medicine> filteredList = new FilteredList<>(medList, b -> true);
+//
+//        chooseMedTextField.textProperty().addListener( (observable, oldValue, newValue) -> {
+//            filteredList.setPredicate( Medicine -> {
+//                if(newValue.isEmpty() || newValue.isBlank() || newValue==null){
+//                    return true;
+//                }
+//
+//                String searchKeyword = newValue.toLowerCase();
+////                System.out.println(searchKeyword);
+//
+//                if(Medicine.getMedicineName().toLowerCase().contains(searchKeyword)){
+//                    return true;
+//                } else if(Medicine.getID().toLowerCase().contains(searchKeyword)){
+//                    return true;
+//                } else if(Medicine.getMedicineCompany().toLowerCase().contains(searchKeyword)){
+//                    return true;
+//                } else return false;
+//
+//            });
+//        });
+//
+//        SortedList<Medicine> sortedList = new SortedList<>(filteredList);
+//        sortedList.comparatorProperty().bind(chooseMedTable.comparatorProperty());
+//
+//        chooseMedTable.setItems(medList);
+//
+//    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         searchMedicine();
@@ -126,13 +132,31 @@ public class ChooseMedicinesController implements Initializable {
             Medicine selectedMed = chooseMedTable.getSelectionModel().getSelectedItem();
             if (selectedMed != null) {
                 String ID = selectedMed.getID();
-                chosenID = ID;
+//                chosenID = ID;
                 if(selectedMed.getQuantity()>0){
-                    selectedMed.updateQuantity();
-                    boolean provided = selectedMed.provideService();
-                    if(!provided){
-                        errorMessage.setText("Service could not be provided");
+                    int quantity=1;
+                    String quantityStr = QuantityTextField.getText();
+                    if(!quantityStr.equals("")) quantity= Integer.parseInt(quantityStr);
+                   // System.out.println(quantity);
+                    if(quantity<=selectedMed.getQuantity()){
+                        selectedMed.updateQuantity(ID,quantity);
+                        boolean provided=false;
+                        for(int i=0;i<quantity;i++){
+                            provided = selectedMed.provideService();
+                        }
+                        ManagementUtils.changeScence(e,"ChooseMedicine.fxml","Choose Medicine");
+                        if(!provided){
+                            errorMessage.setText("Service could not be provided");
+                        }
+                        else{
+                            errorMessage.setTextFill(Color.web("#61cb34"));
+                            errorMessage.setText("Medicine Bought");
+                        }
                     }
+                    else{
+                        errorMessage.setText("Out of Stock");
+                    }
+
                 }
             }
             else{
@@ -145,6 +169,7 @@ public class ChooseMedicinesController implements Initializable {
             if (selectedMed != null) {
                 selectedMed.removeMedicine(errorMessage,e);
             }
+            ManagementUtils.changeScence(e,"ChooseMedicine.fxml","Select Medicine");
         });
 
 //        addMedButton.setOnAction( e -> {

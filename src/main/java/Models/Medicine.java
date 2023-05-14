@@ -8,9 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.time.LocalDate;
 
 import static Controllers.BillingScreenController.bill;
@@ -49,8 +47,34 @@ public class Medicine extends Service implements MedicineInterface {
         this.quantityAvailable = quantityAvailable;
     }
 
-    public void updateQuantity(){
-        if(quantityAvailable!=0) quantityAvailable--;
+    public boolean updateQuantity(String ID,int quantity){
+        if(quantityAvailable>=quantity) quantityAvailable-=quantity;
+        else{
+            return false;
+        }
+        DBUtils connectNow = new DBUtils();
+        Connection connectDB = connectNow.getConnection();
+
+//        String updateStockQuery = "UPDATE hospital.medicineinfo SET Quantity = " +quantityAvailable +"WHERE";
+//        Statement statement = null;
+        try {
+            String updateStockQuery = "UPDATE hospital.medicineinfo SET Quantity = ? WHERE ID = ?";
+            PreparedStatement statement = connectDB.prepareStatement(updateStockQuery);
+
+            // Set the new value for the VARCHAR column
+            statement.setString(1, String.valueOf(quantityAvailable));
+            statement.setString(2, ID);
+
+            int rowsAffected = statement.executeUpdate();
+
+            statement.close();
+            connectDB.close();
+        } catch (SQLException f) {
+            System.out.println("SQL ERROR in Medicine choose: " + f.getMessage());
+            f.printStackTrace();
+        }
+
+        return true;
     }
 
 
@@ -62,15 +86,11 @@ public class Medicine extends Service implements MedicineInterface {
         this.quantityAvailable = quantity;
     }
 
-    public boolean buyMedicine(){
-        bill.increaseBillingAmount(this.medicinePrice);
-        bill.setPaymentStatus(PaymentStatus.Due);
-        return true;
-    }
 
     @Override
     public boolean provideService() {
-        buyMedicine();
+        bill.increaseBillingAmount(this.medicinePrice);
+        bill.setPaymentStatus(PaymentStatus.Due);
         return true;
     }
 

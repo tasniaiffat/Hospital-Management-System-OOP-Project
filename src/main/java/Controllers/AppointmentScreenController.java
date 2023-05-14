@@ -1,7 +1,6 @@
 package Controllers;
 
 import Models.*;
-import Models.ClassHierarchy.Service;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -16,12 +15,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static java.lang.String.join;
+import static Controllers.ChoosePatientScreenController.chosenID;
 
 public class AppointmentScreenController implements Initializable {
 
@@ -56,21 +59,59 @@ public class AppointmentScreenController implements Initializable {
     private Button returnButton;
     ObservableList<Doctor> DoctorList = FXCollections.observableArrayList();
 
-    public static String chosenID = null;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Appointment app=new Appointment();
 
         searchDoctor();
+        Appointment app = new Appointment();
 
         selectDoctorButton.setOnAction( e -> {
             Doctor selectedDoctor = chooseDoctorTable.getSelectionModel().getSelectedItem();
             if (selectedDoctor != null) {
                 String ID = selectedDoctor.getID();
-                chosenID = ID;
-                errorMessage.setText("Appointment Made");
-                app.provideService();
+                String name = selectedDoctor.getName();
+                String speciality= selectedDoctor.getSpeciality();
+                String time = String.valueOf(LocalDate.now());
+
+                DBUtils connectNow = new DBUtils();
+                Connection connectDB = connectNow.getConnection();
+                String appointmentStr = "Consulted "+name+" ("+speciality+") on "+time;
+                Patient patient = new Patient(chosenID);
+
+                List<String> patientList = patient.getCurrentTreatment();
+
+                String appointmentStrList = join(", ",patientList);
+//                System.out.println(appointmentStrList);
+                if(!appointmentStrList.contains(appointmentStr)){
+                    try {
+                        patientList.add(appointmentStr);
+                        appointmentStrList = join(", ",patientList);
+                        String updateStockQuery = "UPDATE hospital.patientinfo SET `Current Treatment` = ? WHERE ID = ?";
+                        PreparedStatement statement = connectDB.prepareStatement(updateStockQuery);
+
+                        // Set the new value for the VARCHAR column
+                        statement.setString(1, appointmentStrList);
+                        statement.setString(2, patient.getID());
+
+                        int rowsAffected = statement.executeUpdate();
+
+
+                        statement.close();
+                        connectDB.close();
+                        app.provideService();
+
+                    } catch (SQLException f) {
+                        System.out.println("SQL ERROR in Appointment choose: " + f.getMessage());
+                        f.printStackTrace();
+                    }
+
+                }
+                else{
+                    System.out.println("Appointment not done");
+                }
+
                 ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             }
             else{
@@ -83,6 +124,7 @@ public class AppointmentScreenController implements Initializable {
             if (selectedDoctor != null) {
                 selectedDoctor.removeDoctor(errorMessage,e);
             }
+            ManagementUtils.changeScence(e,"AppointmentScreen.fxml","Appointment");
         });
 
 //        newDoctorButton.setOnAction( e -> {

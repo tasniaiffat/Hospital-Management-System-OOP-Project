@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.nio.file.Path;
@@ -128,6 +129,10 @@ public class PathologyController implements Initializable {
                     boolean provided = selectedtest.provideService();
                     if(!provided){
                         errorMessage.setText("Service could not be provided");
+                    }
+                    else {
+                        errorMessage.setTextFill(Color.web("#61cb34"));
+                        errorMessage.setText("Lab Test Added");
                     }
                 }
             }

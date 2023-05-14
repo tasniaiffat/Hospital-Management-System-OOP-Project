@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -33,33 +34,47 @@ public class AddMedicineController implements Initializable {
     public Label errorMessage;
     @FXML
     public Button returnButton;
+
+    @FXML
+    public Button refreshButton;
     @FXML
     public TextField newmedcompany;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         addMedicineButton.setOnAction( e -> {
-            String MedName = newMedName.getText();
-            String MedCompany = newmedcompany.getText();
-            String price = newMedPrice.getText();
-            double newMedPrice = Double.parseDouble(price);
-            String stock = newMedStock.getText();
-            int newMedStock = Integer.parseInt(stock);
+            try{
+                String MedName = newMedName.getText();
+                String MedCompany = newmedcompany.getText();
+                String price = newMedPrice.getText();
+                double newMedPrice = Double.parseDouble(price);
+                String stock = newMedStock.getText();
+                int newMedStock = Integer.parseInt(stock);
 
 
-            Medicine medicine = new Medicine(MedName,MedCompany,newMedPrice,newMedStock);
 
-            boolean successfulAdd = medicine.addMedicine(errorMessage,e);
+                Medicine medicine = new Medicine(MedName,MedCompany,newMedPrice,newMedStock);
+                String ID = medicine.getID();
+                boolean successfulAdd = medicine.addMedicine(errorMessage,e);
 
-            if(successfulAdd){
-                //ChoosePatientScreenController.chosenID = medicine.getID();
+                if(successfulAdd){
+                    //ChoosePatientScreenController.chosenID = medicine.getID();
 //                ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Choose a Patient");
+                }
+            }  catch (Exception f){
+                errorMessage.setTextFill(Color.web("#e40707"));
+                errorMessage.setText("Please fill out all fields");
             }
+
 
         });
 
         returnButton.setOnAction( e -> {
             ManagementUtils.changeScence(e,"PatientTypeScreen.fxml","Choose a Medicine");
+        });
+
+        refreshButton.setOnAction( e -> {
+            ManagementUtils.changeScence(e,"AddMedicine.fxml","Choose a Medicine");
         });
     }
 }

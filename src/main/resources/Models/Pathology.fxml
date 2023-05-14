@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PathologyController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PathologyController">
     <left>
         <AnchorPane prefHeight="680.0" prefWidth="309.0" styleClass="ChoosePatientLeft" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
             <children>
@@ -32,18 +33,18 @@
                     <font>
                         <Font size="11.0" />
                     </font></Button>
-            <Button fx:id="selectButton" layoutX="520.0" layoutY="76.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="145.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="Select">
+            <Button fx:id="selectButton" layoutX="512.0" layoutY="68.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="145.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="Select">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-                <Label fx:id="errorMessage" alignment="CENTER" layoutX="40.0" layoutY="62.0" prefHeight="27.0" prefWidth="457.0" text=" " textAlignment="CENTER" textFill="#f20000">
+                <Label fx:id="errorMessage" alignment="CENTER" layoutX="43.0" layoutY="106.0" prefHeight="27.0" prefWidth="457.0" text=" " textAlignment="CENTER" textFill="#f20000">
                     <font>
                         <Font name="Arial Bold" size="18.0" />
                     </font>
                 </Label>
-            <Label layoutX="271.0" layoutY="15.0" styleClass="Label" stylesheets="@../CSS/Pathology.css" text="Lab Tests" />
-            <TextField fx:id="chooseLabTestTxtField" layoutX="40.0" layoutY="78.0" prefHeight="39.0" prefWidth="459.0" promptText="Enter Name of Lab Test" stylesheets="@../CSS/Pathology.css" />
+            <Label layoutX="248.0" layoutY="13.0" styleClass="Label" stylesheets="@../CSS/Pathology.css" text="Lab Tests" />
+            <TextField fx:id="chooseLabTestTxtField" layoutX="43.0" layoutY="70.0" prefHeight="39.0" prefWidth="459.0" promptText="Enter Name of Lab Test" stylesheets="@../CSS/Pathology.css" />
             </children>
         </AnchorPane>
     </center>

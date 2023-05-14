@@ -1,6 +1,7 @@
 package Controllers;
 
 import Models.Billing;
+import Models.ClassHierarchy.PaymentStatus;
 import Models.ManagementUtils;
 import Models.Patient;
 import javafx.fxml.FXML;
@@ -97,7 +98,14 @@ public class BillingScreenController implements Initializable {
 //        });
 
         logOutButton.setOnAction( e -> {
-            ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Hello");
+            if(bill.getPaymentStatus()== PaymentStatus.Due){
+                errorMessageLabel.setTextFill(Color.web("#e40707"));
+                errorMessageLabel.setText("Please Complete Payment!!");
+            }
+            else {
+                ManagementUtils.changeScence(e, "ReceptionScreen.fxml", "Hello");
+            }
+
         });
 
         confirmPaymentButton.setOnAction( e -> {
