@@ -23,6 +23,8 @@ import java.util.logging.Logger;
 
 
 public class ChooseMedicinesController implements Initializable {
+
+
     @FXML
     private TableColumn<Medicine, Double> medPrice;
     @FXML
@@ -100,6 +102,7 @@ public class ChooseMedicinesController implements Initializable {
                 }
 
                 String searchKeyword = newValue.toLowerCase();
+                System.out.println(searchKeyword);
 
                 if(Medicine.getMedicineName().toLowerCase().contains(searchKeyword)){
                     return true;

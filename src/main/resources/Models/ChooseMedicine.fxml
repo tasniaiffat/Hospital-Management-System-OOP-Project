@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,7 +23,7 @@
             </children></AnchorPane>
     </left>
     <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="ChoosePatientCenter" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
+        <AnchorPane fx:id="BackButton" prefHeight="200.0" prefWidth="200.0" styleClass="ChoosePatientCenter" stylesheets="@../CSS/ChoosePatientScreen.css" BorderPane.alignment="CENTER">
             <children>
                 <TableView fx:id="chooseMedTable" layoutX="25.0" layoutY="137.0" prefHeight="501.0" prefWidth="676.0" styleClass="Table" stylesheets="@../CSS/ChooseMedicine.css">
                     <columns>
@@ -40,7 +41,8 @@
                         <Font name="Arial Bold" size="18.0" />
                     </font>
                 </Label>
-                <Button fx:id="backButton" layoutX="602.0" layoutY="14.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="77.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="Back">
+                <TextField fx:id="chooseMedTextField" layoutX="47.0" layoutY="79.0" prefHeight="39.0" prefWidth="365.0" promptText="Enter Name of Medicine" stylesheets="@../CSS/Pathology.css" />
+                <Button fx:id="backButton" layoutX="629.0" layoutY="14.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="50.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="⏎">
                     <font>
                         <Font size="11.0" />
                     </font></Button>
