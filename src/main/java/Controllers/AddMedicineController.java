@@ -52,8 +52,9 @@ public class AddMedicineController implements Initializable {
                 int newMedStock = Integer.parseInt(stock);
 
 
-                Medicine medicine = new Medicine(MedName,MedCompany,newMedPrice,newMedStock);
 
+                Medicine medicine = new Medicine(MedName,MedCompany,newMedPrice,newMedStock);
+                String ID = medicine.getID();
                 boolean successfulAdd = medicine.addMedicine(errorMessage,e);
 
                 if(successfulAdd){

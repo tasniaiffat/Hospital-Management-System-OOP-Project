@@ -35,12 +35,11 @@
                         <Font name="Arial Bold" size="18.0" />
                     </font>
                 </Label>
-                <TextField fx:id="chooseMedTextField" layoutX="25.0" layoutY="60.0" prefHeight="39.0" prefWidth="226.0" promptText="Enter Name of Medicine" stylesheets="@../CSS/Pathology.css" />
                 <Button fx:id="backButton" layoutX="641.0" layoutY="14.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="38.0" styleClass="LogOutButton" stylesheets="@../CSS/ChooseMedicine.css" text="⏎">
                     <font>
                         <Font size="11.0" />
                     </font></Button>
-            <TextField fx:id="QuantityTextField" layoutX="262.0" layoutY="60.0" prefHeight="39.0" prefWidth="172.0" promptText="Enter Quantity" stylesheets="@../CSS/Pathology.css" />
+            <TextField fx:id="QuantityTextField" layoutX="24.0" layoutY="60.0" prefHeight="39.0" prefWidth="410.0" promptText="Enter Quantity" stylesheets="@../CSS/Pathology.css" />
             </children>
         </AnchorPane>
     </center>

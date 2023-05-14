@@ -16,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -64,6 +65,7 @@ public class AppointmentScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         searchDoctor();
+        Appointment app = new Appointment();
 
         selectDoctorButton.setOnAction( e -> {
             Doctor selectedDoctor = chooseDoctorTable.getSelectionModel().getSelectedItem();
@@ -71,36 +73,45 @@ public class AppointmentScreenController implements Initializable {
                 String ID = selectedDoctor.getID();
                 String name = selectedDoctor.getName();
                 String speciality= selectedDoctor.getSpeciality();
+                String time = String.valueOf(LocalDate.now());
 
                 DBUtils connectNow = new DBUtils();
                 Connection connectDB = connectNow.getConnection();
-                String appointmentStr = "Consulted "+name+" ("+speciality+")";
+                String appointmentStr = "Consulted "+name+" ("+speciality+") on "+time;
                 Patient patient = new Patient(chosenID);
+
                 List<String> patientList = patient.getCurrentTreatment();
-                patientList.add(appointmentStr);
-                appointmentStr = join(", ",patientList);
-//                System.out.println(appointmentStr);
+
+                String appointmentStrList = join(", ",patientList);
+//                System.out.println(appointmentStrList);
+                if(!appointmentStrList.contains(appointmentStr)){
+                    try {
+                        patientList.add(appointmentStr);
+                        appointmentStrList = join(", ",patientList);
+                        String updateStockQuery = "UPDATE hospital.patientinfo SET `Current Treatment` = ? WHERE ID = ?";
+                        PreparedStatement statement = connectDB.prepareStatement(updateStockQuery);
+
+                        // Set the new value for the VARCHAR column
+                        statement.setString(1, appointmentStrList);
+                        statement.setString(2, patient.getID());
+
+                        int rowsAffected = statement.executeUpdate();
 
 
-                try {
-                    String updateStockQuery = "UPDATE hospital.patientinfo SET `Current Treatment` = ?";
-                    PreparedStatement statement = connectDB.prepareStatement(updateStockQuery);
+                        statement.close();
+                        connectDB.close();
+                        app.provideService();
 
-                    // Set the new value for the VARCHAR column
-                    statement.setString(1, appointmentStr);
+                    } catch (SQLException f) {
+                        System.out.println("SQL ERROR in Appointment choose: " + f.getMessage());
+                        f.printStackTrace();
+                    }
 
-                    int rowsAffected = statement.executeUpdate();
-
-                    statement.close();
-                    connectDB.close();
-                } catch (SQLException f) {
-                    System.out.println("SQL ERROR in Appointment choose: " + f.getMessage());
-                    f.printStackTrace();
+                }
+                else{
+                    System.out.println("Appointment not done");
                 }
 
-
-//                chosenID = ID;
-                errorMessage.setText("Appointment Made");
                 ManagementUtils.changeScence(e,"ReceptionScreen.fxml","Reception");
             }
             else{
