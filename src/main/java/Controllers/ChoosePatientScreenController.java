@@ -80,7 +80,7 @@ public class ChoosePatientScreenController implements Initializable {
         removePatientButton.setOnAction( e -> {
             Patient selectedPatient = choosePatientTable.getSelectionModel().getSelectedItem();
             if (selectedPatient != null) {
-                selectedPatient.removePatient(errorMessage,e);
+                selectedPatient.removePatient(e,errorMessage);
             }
         });
 

@@ -46,7 +46,7 @@ public class Patient extends Person implements PatientInterface {
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
 
-        String selectPatientQuery = "SELECT * FROM patientinfo WHERE ID = "+"'"+patientID+"'";
+        String selectPatientQuery = "SELECT * FROM hospital.patientinfo WHERE ID = "+"'"+patientID+"'";
 
 
 
@@ -169,6 +169,7 @@ public class Patient extends Person implements PatientInterface {
                 errorMessage.setTextFill(Color.web("#61cb34"));
                 errorMessage.setText("Patient Added!");
                 successfulAdd = true;
+                ManagementUtils.changeScence(e,"ChoosePatientScreen.fxml","Choose Patient");
             }
             else{
                 errorMessage.setText("Unable to add patient");
@@ -181,7 +182,7 @@ public class Patient extends Person implements PatientInterface {
         return successfulAdd;
     }
 
-    public boolean removePatient(Label errorMessage, ActionEvent e){
+    public boolean removePatient(ActionEvent e, Label errorMessage){
         boolean successfulRemove = false;
         DBUtils connectNow = new DBUtils();
         Connection connectDB = connectNow.getConnection();
